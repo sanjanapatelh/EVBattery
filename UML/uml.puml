@@ -1,0 +1,85 @@
+@startuml
+left to right direction
+skinparam linetype ortho
+skinparam roundcorner 15
+skinparam shadowing false
+skinparam dpi 150
+
+skinparam class {
+  BackgroundColor #f9f9f9
+  BorderColor #333333
+  ArrowColor #336699
+  FontColor #111111
+  FontSize 12
+}
+
+' Define entities
+class BatteryManufacturer {
+  +manufacturerId: String
+  +name: String
+  +brand: String
+}
+
+class CarManufacturer {
+  +manufacturerId: String
+  +name: String
+}
+
+class Battery {
+  +batteryId: String
+  +manufacturerId: String
+  +status: String
+  +createdAt: String
+  +updatedAt: String
+  +carId: String
+  +ownerId: String
+}
+
+class TestResult {
+  +batteryId: String
+  +testerId: String
+  +result: String
+  +date: String
+}
+
+class Car {
+  +carId: String
+  +carManufacturerId: String
+  +batteryId: String
+}
+
+class CarOwner {
+  +ownerId: String
+  +name: String
+}
+
+class Recycler {
+  +recyclerId: String
+  +name: String
+}
+
+' Relationships with spaced layout and styled labels
+BatteryManufacturer --> Battery
+note top of BatteryManufacturer : <color:blue><b>Manufactures</b></color>
+
+Battery --> TestResult
+note right of Battery : <color:green><b>Tested Via</b></color>
+
+Battery --> Car
+note bottom of Battery : <color:orange><b>Installed Into</b></color>
+
+CarManufacturer --> Car
+note top of CarManufacturer : <color:blue><b>Manufactures Car</b></color>
+
+CarManufacturer --> Battery
+note bottom of CarManufacturer : <color:brown><b>Integrates</b></color>
+
+Car --> CarOwner
+note top of Car : <color:red><b>Sold To</b></color>
+
+CarOwner --> Recycler
+note top of CarOwner : <color:purple><b>Sends To Recycle</b></color>
+
+Recycler --> Battery
+note bottom of Battery : <color:purple><b>Transferred After Recycle</b></color>
+@enduml

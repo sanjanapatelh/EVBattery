@@ -1,0 +1,33 @@
+@startuml
+hide footbox
+actor BatteryManufacturer as BM
+actor EVManufacturer as CM
+actor EVOwner as CO
+actor Recycler as R
+
+participant SmartContract as SC
+participant Battery
+participant EV
+
+== Registration & Manufacturing ==
+BM -> SC : RegisterManufacturer()
+SC -> BM : Registration Confirmed
+
+BM -> SC : ManufactureBattery()
+SC -> Battery : Battery Created
+
+
+== EV Manufacturing & Integration ==
+CM -> SC : RegisterEV()
+SC -> EV : EV Created
+
+== Ownership Transfer ==
+CO -> SC : TransferBattery()
+SC -> Battery : Status = Installed
+SC -> EV : Battery Integrated
+
+== Recycling ==
+CO -> SC : SendToRecycle()
+SC -> Battery : Status = Recycled
+SC -> R : Transfer Battery Ownership
+@enduml
