@@ -1,0 +1,52 @@
+sequenceDiagram
+    participant M as Manufacturer
+    participant SC as SmartContract
+    participant T as Tester
+    participant CO as Car Owner
+    participant C as Car
+    participant R as Recycler
+
+    Note over M,R: Battery Lifecycle Management System
+
+    %% Registration Phase
+    M->>SC: RegisterManufacturer(id, name, brand)
+    SC-->>M: Registration Confirmed
+
+    %% Manufacturing Phase
+    M->>SC: ManufactureBattery(batteryID, manufacturerID, rawMaterials, date)
+    SC-->>M: Battery Created (Status: Manufactured)
+
+    %% Testing Phase
+    T->>SC: TestBattery(batteryID, testerID, result, date)
+    SC-->>T: Test Results Recorded
+    alt Test Passed
+        Note over SC: Battery Status: Tested/Approved
+    else Test Failed
+        Note over SC: Battery Status: Failed/Rejected
+    end
+
+    %% Installation & Transfer Phase
+    CO->>SC: TransferBattery(batteryID, ownerID, carID, date)
+    SC->>C: Install Battery
+    SC-->>CO: Ownership Transferred (Status: Installed)
+
+    %% Usage Phase
+    Note over C: Battery in active use
+    
+    %% Maintenance/Testing (Optional)
+    loop Periodic Testing
+        T->>SC: TestBattery(batteryID, testerID, result, date)
+        SC-->>T: Maintenance Test Recorded
+    end
+
+    %% End of Life Phase
+    CO->>SC: Request Battery Retirement
+    CO->>R: Handover for Recycling
+    R->>SC: RecycleBattery(batteryID, recyclerID, date)
+    SC-->>R: Battery Status: Recycled
+
+    %% Query/Audit Phase
+    alt Query Battery History
+        CO->>SC: QueryBattery(batteryID)
+        SC-->>CO: Complete Battery History
+    end
