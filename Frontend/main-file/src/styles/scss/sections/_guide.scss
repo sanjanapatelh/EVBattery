@@ -1,0 +1,113 @@
+/* ----- 29. Guide ----- */
+.rv-9-guides {
+
+    @include xl {
+        padding: 40px 0 80px;
+    }
+
+    @include md {
+        padding: 30px 0 60px;
+    }
+
+    &__row {
+        --bs-gutter-x: 100px;
+
+        @include xl {
+            --bs-gutter-x: 20px;
+        }
+
+        @include md {
+            --bs-gutter-x: 30px;
+        }
+    }
+
+    &__img img {
+        @include xl {
+            max-width: 80%;
+        }
+    }
+}
+
+.rv-9-guide {
+    padding: 0;
+    border: 0;
+    margin-bottom: 75px;
+
+    @include xl {
+        margin-bottom: 65px;
+        gap: 20px;
+    }
+
+    @include lg {
+        gap: 15px;
+    }
+
+    @include md {
+        flex-direction: row;
+        margin-bottom: 35px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+
+        .rv-9-service__icon::before {
+            content: none;
+        }
+    }
+
+    .rv-9-service__icon {
+        flex-shrink: 0;
+        width: 54px;
+        height: 54px;
+        position: relative;
+        overflow: visible;
+
+        @include lg {
+            width: 48px;
+            height: 48px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 50%;
+            translate: -50% 0;
+            width: 1px;
+            height: 90px;
+            background: url(/assets/img/rv-9-guide-stroke.png) no-repeat center center;
+            background-size: 100% 90px;
+
+            @include xl {
+                height: 80px;
+            }
+
+            @include md {
+                height: 50px;
+            }
+        }
+    }
+
+    &__txt {
+        padding-top: 10px;
+    }
+
+    .rv-3-service__title {
+        font-family: var(--mulish);
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 11px;
+
+        @include lg {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+    }
+
+    .rv-3-service__descr {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,86 @@
+/* ----- 42. SERVICES INNER PAGE ----- */
+.rv-inner-service {
+    padding: 35px 40px;
+    position: relative;
+    background-color: var(--white-f);
+    border: none;
+    height: 100%;
+
+    @include lg {
+        padding: 30px 35px;
+    }
+
+    @include md {
+        padding: 25px 25px;
+    }
+
+    @include xs {
+        padding: 25px 20px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        bottom: -1px;
+        right: -1px;
+        z-index: 1;
+        pointer-events: none;
+        border: solid #ddd;
+        border-width: 0 1px 1px 0;
+    }
+
+    &:hover .svg-elem-1 {
+        stroke: #509e0f;
+    }
+
+    .rv-14-service__icon {
+        @include lg {
+            margin-bottom: 30px;
+        }
+
+        @include md {
+            margin-bottom: 25px;
+        }
+
+        svg {
+            @include lg {
+                width: 71px;
+                height: 71px;
+            }
+
+            @include lg {
+                width: 66px;
+                height: 66px;
+            }
+        }
+    }
+
+    .rv-14-service__title {
+        @include lg {
+            margin-bottom: 11px;
+        }
+
+        @include md {
+            font-size: 20px;
+        }
+
+        a:hover {
+            color: #509e0f;
+        }
+    }
+
+    .rv-3-service__descr {
+        @include lg {
+            margin-bottom: 27px;
+        }
+
+        @include md {
+            margin-bottom: 22px;
+        }
+    }
+
+    .rv-14-service__btn:hover {
+        color: #509e0f;
+    }
+}

@@ -1,0 +1,92 @@
+{
+  "info": {
+    "name": "Libchain Battery Lifecycle API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register Battery Manufacturer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fcn\": \"RegisterBatteryManufacturer\",\n  \"args\": [\n    \"BMANU-LGCHEM-250706-0045\",\n    \"UID-LGCHEM-0045\",\n    \"LGCHEM\",\n    \"LG Chem\",\n    \"LG\"\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/invoke",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "invoke"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Manufacture Battery",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fcn\": \"ManufactureBattery\",\n  \"args\": [\n    \"BAT-LFP-2170-250706-XYZ1\",\n    \"BMANU_1234\",\n    \"[\\\"IRON123\\\",\\\"GRAPH456\\\"]\",\n    \"40:60\",\n    \"2025-07-06T12:00:00Z\"\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/invoke",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "invoke"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Bind Battery to Car",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fcn\": \"BindBatteryToCar\",\n  \"args\": [\n    \"BATT_1234\",\n    \"VIN-TESLA-M3-2025-ABC1\",\n    \"Tesla\",\n    \"Model 3\",\n    \"2025\",\n    \"AMANU_5678\",\n    \"2025-07-06T13:00:00Z\"\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/invoke",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "invoke"
+          ]
+        }
+      }
+    }
+  ]
+}

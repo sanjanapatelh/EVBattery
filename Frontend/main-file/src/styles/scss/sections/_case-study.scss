@@ -1,0 +1,152 @@
+/* ----- 34. Case Study ----- */
+.rv-14-case-studies {
+    background-color: #EAF5F8;
+
+    @include md {
+        padding-top: 60px;
+    }
+
+    &-txt-slider {
+        // max-height: 625px;
+        // height: calc(100% - 205px);
+        min-height: 625px;
+        // min-height: 670px;
+        margin: 80px 0 125px 80px;
+        margin: 80px 0 80px 80px;
+        padding: 44px 0;
+        // padding: 0;
+        border-left: 1px solid rgba(2, 2, 8, 0.10);
+
+        @include xl {
+            min-height: 430px;
+            margin: 80px 0 80px 50px;
+        }
+
+        @include lg {
+            margin: 80px 0 80px 30px;
+            min-height: 370px;
+        }
+
+        @include md {
+            min-height: auto;
+            margin: 30px 0 60px 0;
+        }
+    }
+}
+
+.rv-14-case-study {
+    &__img {
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+            max-width: 960px;
+            max-height: 830px;
+
+            @include xxl {
+                max-height: 782px;
+            }
+
+            @include xl {
+                max-height: 592px;
+            }
+
+            @include lg {
+                height: 100%;
+                max-height: 562px;
+            }
+
+            @include md {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    &__txt {
+        font-family: var(--mulish);
+        padding: 44px 0;
+        padding: 0;
+        padding-left: 75px;
+        height: max-content !important;
+
+        @include xl {
+            padding-left: 65px;
+        }
+
+        @include lg {
+            padding-left: 55px;
+        }
+
+        @include md {
+            padding-left: 45px;
+        }
+
+        @include sm {
+            padding-left: 35px;
+        }
+
+        @include xxs {
+            padding-left: 25px;
+        }
+
+        &.swiper-slide-active {
+            border-left: 1px solid var(--black);
+
+            .rv-14-case-study__order {
+                -webkit-text-fill-color: #E64209;
+                -webkit-text-stroke-color: #E64209;
+                color: #E64209;
+            }
+        }
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // gap: 220px;
+        margin-bottom: 33px;
+    }
+
+    &__order {
+        font-size: 76px;
+        font-weight: 700;
+        line-height: 0.7;
+        -webkit-text-stroke: 1px rgba(2, 2, 8, 0.14);
+        -webkit-text-fill-color: transparent;
+
+        @include md {
+            font-size: 66px;
+        }
+
+        @include sm {
+            font-size: 60px;
+        }
+
+        @include xxs {
+            font-size: 56px;
+        }
+    }
+
+    &__bottom {
+        .rv-3-project__sub-title {
+            font-size: 16px;
+            text-transform: capitalize;
+            margin-bottom: 4px;
+
+            &::before {
+                width: 5px;
+                height: 5px;
+                background-color: #E64209;
+            }
+        }
+    }
+
+    &__title {
+        color: #020208;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,161 @@
+/* ----- 31. Causes ----- */
+.rv-10-causes {
+    .row.g-30 {
+        @include xl {
+            --bs-gutter-x: 20px;
+        }
+    }
+}
+
+.rv-10-cause {
+    border-radius: 14px;
+    border: 1px solid rgba(5, 5, 5, 0.14);
+    padding: 24px;
+
+    @include lg {
+        padding: 15px;
+    }
+
+    &:hover {
+        border-color: #EFC329;
+
+        .rv-1-blog__img img {
+            scale: 1.1;
+        }
+    }
+
+    .rv-1-blog__img {
+        position: relative;
+        border-radius: 10px;
+        margin-bottom: 25px;
+
+        @include xl {
+            margin-bottom: 15px;
+        }
+
+        img {
+            height: 270px;
+
+            @include xl {
+                height: 225px;
+            }
+
+            @include lg {
+                height: 200px;
+            }
+        }
+    }
+
+    .rv-7-product__tag {
+        border-radius: 4px;
+        background: #EFC329;
+        box-shadow: 0px 2px 5px 0px rgba(5, 5, 5, 0.40);
+        color: var(--black);
+        left: auto;
+        right: 20px;
+        font-size: 14px;
+    }
+
+    .rv-1-blog__txt {
+        padding: 0;
+        border: 0;
+    }
+
+    .rv-1-blog__title {
+        font-weight: 700;
+        font-family: var(--mulish);
+        line-height: 136.364%;
+        margin-bottom: 8px;
+
+        a:hover {
+            color: #efc329;
+        }
+    }
+
+    .rv-10-about__descr {
+        margin-bottom: 33px;
+    }
+
+    .rv-10-def-btn {
+        background-color: #050505;
+        color: var(--white-f);
+        border-color: #050505;
+
+        @include xl {
+            height: 50px;
+            line-height: 47px;
+            padding: 0 34px;
+        }
+
+        @include lg {
+            height: 45px;
+            line-height: 42px;
+            padding: 0 24px;
+        }
+
+        &:hover {
+            background-color: transparent;
+            color: var(--black);
+        }
+    }
+}
+
+.rv-10-stats {
+    margin-bottom: 30px;
+
+    @include xl {
+        margin-bottom: 20px;
+    }
+
+    .progress-container {
+        border-radius: 3px;
+        opacity: 1;
+        background: rgb(5 5 5 / 08%);
+        transform: skew(0);
+        padding: 5px 6px;
+        margin-bottom: 12px;
+    }
+
+    .progressbar {
+        background-color: #EFC329;
+        height: 4px;
+    }
+
+    .progress-label {
+        transform: skew(0) translate(-50%, calc(-100% - 7px));
+        background: #efc329;
+        width: max-content;
+        height: auto;
+        border: none;
+        color: #050505;
+        padding: 0 5px;
+        position: relative;
+        border-radius: 4px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
+            left: 50%;
+            translate: -50% 0;
+            height: 5px;
+            width: 10px;
+            background: #efc329;
+        }
+    }
+
+    &__bottom {
+        font-size: 15px;
+        font-weight: 600;
+        font-family: var(--mulish);
+
+        span.key {
+            text-transform: uppercase;
+        }
+
+        span.value {
+            color: #696969;
+        }
+    }
+}

@@ -1,0 +1,133 @@
+/* ----- 33. Mission ----- */
+.rv-11-mission {
+    text-align: center;
+    background-color: #F7F4F0;
+    position: relative;
+    overflow: hidden;
+
+    &__quote {
+        color: rgba(5, 5, 5, 0.7);
+        font-family: var(--mulish);
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 183.333%;
+        margin-bottom: 36px;
+
+        @media screen and (max-width: 1510px) {
+            font-size: 22px;
+            line-height: 173.333%;
+        }
+
+        @include xl {
+            font-size: 20px;
+            line-height: 163.333%;
+            margin-bottom: 26px;
+        }
+
+        @include sm {
+            font-size: 18px;
+            line-height: 153.333%;
+            margin-bottom: 16px;
+        }
+
+        @include xxs {
+            font-size: 16px;
+        }
+
+        &::before {
+            content: open-quote;
+        }
+
+        &::after {
+            content: close-quote;
+        }
+    }
+
+    &-quoter {
+        text-align: left;
+        border-radius: 20px 0px;
+        background: var(--white-f);
+        box-shadow: 0px 1px 1px 0px rgba(5, 5, 5, 0.16);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        font-family: var(--mulish);
+        color: var(--black);
+
+        &__img img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px 0;
+        }
+
+        &__name {
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 93.333%;
+            margin-bottom: 8px;
+        }
+
+        &__label {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 76.923%;
+            display: block;
+        }
+    }
+
+    &__imgs {
+        height: 0;
+
+        img {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            clip-path: url(#rv-11-mission-path);
+            min-width: 306px;
+            aspect-ratio: 153 / 205;
+
+            @media screen and (max-width: 1510px) {
+                left: -40px;
+            }
+
+            @include xl {
+                left: -70px;
+                top: -40px;
+            }
+
+            @include lg {
+                left: -150px;
+            }
+
+            @include md {
+                left: -100%;
+            }
+
+            &:nth-child(2) {
+                clip-path: url(#rv-11-mission-path-2);
+                top: auto;
+                left: auto;
+                right: 0;
+                bottom: 40px;
+
+                @media screen and (max-width: 1510px) {
+                    right: -65px;
+                }
+
+                @include xl {
+                    right: -105px;
+                    bottom: -30px;
+                }
+
+                @include lg {
+                    right: -185px;
+                }
+
+                @include md {
+                    right: -100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+/* ----- 41. PROJECTS INNER PAGE ----- */
+.rv-inner-project {
+    width: 100%;
+
+    .rv-9-project__txt {
+        padding: 0 35px 28px;
+
+        @include xl {
+            padding: 0 30px 23px;
+        }
+
+        @include lg {
+            padding: 0 25px 18px;
+        }
+    }
+
+    .rv-3-project__img::before {
+        background: linear-gradient(48deg, rgba(101, 171, 3, 0.9) 12.77%, rgba(101, 171, 3, 0.27) 98.77%);
+    }
+
+    .rv-3-project__img img {
+        @include xl {
+            height: 500px;
+        }
+
+        @include lg {
+            height: 400px;
+        }
+    }
+
+    .rv-9-project__title {
+        @include xl {
+            font-size: 28px;
+        }
+
+        @include lg {
+            font-size: 25px;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+    }
+}
+
+.rv-inner-cta {
+    background-color: #f5f6fa;
+}

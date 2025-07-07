@@ -1,0 +1,110 @@
+/* ----- 16. Award ----- */
+.rv-2-award {
+    padding-bottom: 120px;
+
+    @include xl {
+        padding-bottom: 80px;
+    }
+
+    @include md {
+        padding-bottom: 60px;
+    }
+}
+
+.rv-2-honor {
+    border-top-color: rgb(255 255 255 / 10%);
+    grid-template-columns: max-content max-content auto max-content;
+    gap: 110px;
+
+    @include xl {
+        gap: 50px;
+    }
+
+    @include md {
+        padding: 20px;
+        gap: 30px;
+    }
+
+    @include sm {
+        grid-template-columns: max-content max-content auto;
+        text-align: left;
+    }
+
+    @include xxs {
+        grid-template-columns: repeat(2, 50%);
+        text-align: center;
+    }
+
+    &::before {
+        background: linear-gradient(94deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%);
+    }
+
+    &:hover {
+        border-color: rgb(255 255 255 / 10%);
+        border-bottom-color: transparent;
+
+        .rv-2-honor__btn i {
+            background-color: #DAED1A;
+            border-color: #DAED1A;
+            color: var(--black);
+        }
+    }
+
+    &:last-child {
+        border-bottom-color: rgb(255 255 255 / 10%);
+
+        &:hover {
+            border-color: rgb(255 255 255 / 10%);
+        }
+    }
+
+    &__year {
+        margin-bottom: 0;
+    }
+
+    &__img img {
+        width: 100px;
+        height: 80px;
+        object-fit: contain;
+    }
+
+    &__details {
+        @include xxs {
+            grid-column: 1/ 4;
+        }
+    }
+
+    &__title {
+        font-size: 28px;
+        font-weight: 600;
+
+        @include xl {
+            font-size: 25px;
+        }
+
+        @include md {
+            font-size: 22px;
+        }
+    }
+
+    &__descr {
+        color: rgb(255 255 255 / 60%);
+        margin-bottom: 0;
+    }
+
+    &__btn {
+        color: var(--white-f);
+
+        @include md {
+            grid-column: auto;
+        }
+
+        @include sm {
+            grid-column: 1/ 4;
+        }
+
+        i {
+            border-color: rgb(255 255 255 / 14%);
+        }
+    }
+}

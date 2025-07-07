@@ -1,0 +1,247 @@
+/* ----- 25. Partners ----- */
+.rv-5-partners {
+    background: url(/assets/img/rv-5-partner-bg.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 55px 0;
+    text-align: center;
+
+    @include lg {
+        padding: 40px 0;
+    }
+
+    @include sm {
+        padding: 30px 0;
+    }
+
+    .swiper-wrapper {
+        align-items: center;
+    }
+}
+
+// INDEX-6 CLIENTS
+.rv-6-clients {
+    background-color: var(--black);
+    padding: 60px 0;
+    text-align: center;
+
+    &__title {
+        color: var(--white-f);
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: -0.8px;
+        text-align: center;
+        margin-bottom: 53px;
+
+        @include xxs {
+            font-size: 18px;
+        }
+
+        a {
+            color: #F2584C;
+            text-decoration: 1px underline;
+            text-underline-offset: 4px;
+        }
+    }
+
+    img {
+        opacity: 30%;
+        transition: 0.4s ease;
+
+        &:hover {
+            opacity: 100%;
+        }
+    }
+
+}
+
+// INDEX-7 PARTNERS 
+.rv-7 {
+    &-partners {
+        &__slider {
+            border: 1px solid rgb(5 5 5 / 10%);
+            border-left: 0;
+            position: relative;
+        }
+    }
+
+    &-member {
+        border-left: 1px solid rgb(5 5 5 / 10%);
+        height: auto;
+
+        a {
+            opacity: 24%;
+            width: 100%;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 10px;
+
+            @include xxs {
+                padding: 22px 10px;
+            }
+
+            &:hover {
+                opacity: 1;
+                background-color: rgba(42, 156, 241, 0.10);
+            }
+        }
+
+        img {
+            object-fit: contain;
+
+            @include sm {}
+
+            @include xxs {}
+        }
+    }
+}
+
+.rv-7-slider-nav--small {
+    width: 100%;
+    z-index: 1;
+
+    button {
+        translate: -50% 0;
+        background-color: #EDEEEF;
+        width: 40px;
+        height: 40px;
+        color: var(--black);
+
+        @include xl {
+            line-height: normal;
+        }
+
+        @include xs {
+            translate: 0 0;
+        }
+
+        &:hover {
+            background-color: var(--black);
+            color: var(--white-f);
+        }
+
+        &:last-child {
+            translate: 50% 0;
+
+            @include xs {
+                translate: 0 0;
+            }
+        }
+    }
+}
+
+// INDEX-8 PARTNERS 
+.rv-8-partners__slider {
+    margin-top: 70px;
+    text-align: center;
+
+    @include md {
+        margin-top: 60px;
+    }
+
+    @include xxs {
+        margin-top: 40px;
+    }
+
+    .swiper-wrapper {
+        align-items: center;
+    }
+
+    img {
+        opacity: 30%;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// INDEX-10 PARTNERS 
+.rv-10-partners {
+    border-bottom: 1px solid rgb(5 5 5 / 10%);
+    padding-bottom: 38px;
+
+    @include lg {
+        padding-bottom: 28px;
+    }
+
+    img {
+        opacity: 30%;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// INDEX-13 PARTNERS
+.rv-13-partners {
+    .rv-7-slider-nav--small button {
+        border-radius: 0;
+        font-size: 20px;
+        background-color: var(--white-f);
+        box-shadow: 0px 2px 3px 0px rgba(5, 5, 5, 0.14);
+
+        &:hover {
+            background-color: var(--black);
+        }
+    }
+}
+
+.rv-13-member {
+    a:hover {
+        background-color: #F5F5F5;
+    }
+}
+
+// INDEX-14 PARTNERS
+.rv-14-partners__slider {
+    margin-top: 90px;
+    text-align: center;
+
+    @include xxs {
+        margin-top: 70px;
+    }
+
+    a {
+        opacity: 50%;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// INDEX-15 PARTNERS
+.rv-15-brand_main_area {
+    padding-bottom: 100px;
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding-bottom: 30px;
+    }
+
+    .bx-wrapper {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: 0;
+        background: none;
+        max-width: 100% !important;
+        margin-bottom: 0;
+    }
+}
+
+.rv-15-brand_area_second_row {
+    padding-bottom: 50px;
+
+    .rv-15-single_brand {
+        img {
+            width: 130px;
+            height: 72px;
+            margin: auto;
+            object-fit: contain;
+        }
+    }
+}

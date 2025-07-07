@@ -1,0 +1,79 @@
+/* ----- 36. STATS ----- */
+.rv-14-stats {
+    background: url(/assets/img/rv-14-stats-bg.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 72px 0 62px;
+    position: relative;
+
+    &__vectors img {
+        position: absolute;
+
+        &:first-child {
+            top: 35px;
+            right: 125px;
+            animation: rv-14-rotate-center 2s linear infinite;
+        }
+
+        &:nth-child(2) {
+            left: 130px;
+            bottom: 18px;
+            animation: rv-14-slideY 2.5s linear alternate infinite;
+        }
+    }
+}
+
+@keyframes rv-14-rotate-center {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+@keyframes rv-14-slideY {
+    0% {
+        transform: translate(30px, -30px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.rv-14-stat {
+    font-family: var(--mulish);
+    border-right: 1px solid rgb(255 255 255 / 10%);
+
+    @include xxs {
+        border-right: none;
+    }
+
+    &__title {
+        margin-bottom: 0;
+        color: rgb(255 255 255 / 50%);
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__number {
+        margin-bottom: 0;
+        color: var(--white-f);
+        font-weight: 800;
+        font-size: 54px;
+
+        @include xs {
+            font-size: 44px;
+        }
+
+        @include xxs {
+            font-size: 38px;
+        }
+    }
+
+    &--last {
+        border: none;
+    }
+}

@@ -1,0 +1,260 @@
+/* ----- 26. Features ----- */
+.rv-7-features {
+    background-color: #1A1C19;
+    padding: 36px 50px;
+    position: relative;
+    margin-top: -50px;
+    color: var(--white-f);
+    display: flex;
+    gap: 50px;
+    z-index: 1;
+
+    @include xl {
+        padding: 36px 35px;
+        gap: 35px;
+    }
+
+    @include lg {
+        padding: 26px 35px;
+    }
+
+    @include md {
+        flex-wrap: wrap;
+    }
+
+    @include sm {
+        gap: 25px;
+    }
+}
+
+.rv-7-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-family: var(--mulish);
+    flex: auto;
+
+    @include lg {
+        flex-direction: column;
+        row-gap: 12px;
+    }
+
+    @include md {
+        flex: 45%;
+        flex-direction: row;
+    }
+
+    @include sm {
+        flex-direction: column;
+    }
+
+    &:not(:last-child) {
+        border-right: 1px solid rgb(255 255 255 / 10%);
+        padding-right: 50px;
+
+        @include xl {
+            padding-right: 35px;
+        }
+
+        @include md {
+            border: none;
+            padding-right: 0;
+        }
+    }
+
+    img {
+        width: 35px;
+        height: 35px;
+        object-fit: none;
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 3px;
+    }
+
+    &__sub-title {
+        font-size: 15px;
+        margin-bottom: 0;
+        opacity: 60%;
+    }
+}
+
+// INDEX-12 FEATURES
+.rv-12-features {
+    background-color: #EEF6E7;
+
+}
+
+.rv-12-feature {
+    color: var(--black);
+
+    .rv-7-feature__sub-title {
+        font-weight: 500;
+    }
+}
+
+// INDEX-23 FEATURES/WHY CHOOSE US
+.rv-23-whychoose_main_area {
+    padding: 160px 0;
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 130px 0;
+    }
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding: 80px 0;
+    }
+
+    @media #{$sm,$mobile,$sm-mobile} {
+        padding: 60px 0;
+    }
+
+    @media #{$mobile,$sm-mobile} {
+        padding: 50px 0;
+    }
+
+    @media #{$sm-mobile} {
+        padding: 35px 0;
+    }
+
+    .rv-23-whychoose_image {
+        display: flex;
+        column-gap: 30px;
+        height: 600px;
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            height: 480px;
+        }
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            height: 430px;
+        }
+
+        @media #{$mobile,$sm-mobile} {
+            height: 370px;
+            column-gap: 15px;
+        }
+
+        @media #{$sm-mobile} {
+            height: 310px;
+            column-gap: 15px;
+        }
+
+        img {
+            height: 500px;
+            width: 100%;
+            object-fit: cover;
+            width: 50%;
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                height: 400px;
+            }
+
+            @media #{$sm,$mobile,$sm-mobile} {
+                height: 320px;
+            }
+
+            @media #{$mobile,$sm-mobile} {
+                height: 300px;
+            }
+
+            @media #{$sm-mobile} {
+                height: 250px;
+            }
+        }
+
+        img:nth-child(2) {
+            align-self: flex-end;
+            width: 50%;
+        }
+    }
+
+    .rv-23-whychoose_content {
+        // position: relative;
+        padding-left: 70px;
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            padding-left: 35px;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            padding-left: 0px;
+        }
+
+        @media #{$sm-mobile} {
+            padding-top: 30px;
+        }
+
+        .rv-23-whychoose_content_sub_title {
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 700;
+            background: #020208;
+            padding: 1px 4px;
+            display: inline-block;
+            font-family: $mulish;
+        }
+
+        .rv-23-whychoose_content_title {
+            color: #020208;
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 50px;
+            font-family: $mulish;
+
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                font-size: 25px;
+                margin-bottom: 25px;
+            }
+
+            @media #{$sm-mobile} {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .rv-23-whychoose_content_desc {
+            color: rgba(2, 2, 8, 0.7);
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 50px;
+            font-family: $mulish;
+
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                margin-bottom: 30px;
+            }
+        }
+
+        .single-progressbar {
+            padding-bottom: 30px;
+
+            .rv-23-progress_bar {
+                border: 1px solid rgba(2, 2, 8, 0.20);
+
+                .progressbar {
+                    margin: 7px 0 8px 10px;
+                }
+            }
+
+            h4 {
+                color: #020208;
+                font-size: 16px;
+                font-weight: 700;
+                font-family: $mulish;
+            }
+
+            .percentCount {
+                font-family: $mulish;
+                color: #020208;
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+    }
+}

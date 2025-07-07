@@ -1,0 +1,453 @@
+/* ----- 30. Infos ----- */
+.rv-10-infos {
+    background-color: #EFC329;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+    &.container {
+        padding: 0;
+
+        @media screen and (min-width:1520px) {
+            max-width: calc(100% - 200px);
+        }
+    }
+
+    &__txt {
+        padding: 80px 0;
+        width: 68%;
+        margin: auto;
+
+        @media screen and (max-width: 1775px) and (min-width: 1600px) {
+            width: 77%;
+        }
+
+        @include xxl {
+            width: 85%;
+        }
+
+        @include md {
+            padding: 120px 0 60px;
+        }
+
+        @include sm {
+            width: calc(100% - 24px);
+            padding: 110px 0 40px;
+        }
+
+        .nav-tabs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #050505;
+            border: none;
+            gap: 72px;
+            padding: 0 50px;
+            border-bottom-right-radius: 20px;
+            max-width: 50%;
+            z-index: 1;
+
+            @include lg {
+                gap: 0 42px;
+                padding: 0 30px;
+            }
+
+            @include md {
+                max-width: 100%;
+            }
+
+            @include xxs {
+                gap: 0 32px;
+                padding: 0 20px;
+            }
+
+            .nav-link {
+                color: rgb(255 255 255 / 70%);
+                text-transform: capitalize;
+                border: none;
+
+                font-family: var(--mulish);
+                font-size: 18px;
+                font-weight: 700;
+                padding: 20px 0;
+                position: relative;
+
+                @include xxs {
+                    font-size: 16px;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 17px;
+                    width: 100%;
+                    background-color: #EFC329;
+                    height: 2px;
+                    border-radius: 6px;
+                    opacity: 0;
+                    transition: 0.4s ease;
+                }
+
+                &.active {
+                    color: var(--white-f);
+                    background: none;
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .rv-10-section__sub-title .styled {
+            background-color: var(--white-f);
+        }
+
+        .rv-10-section__title {
+            color: #050505;
+            font-size: 46px;
+            line-height: 108.696%;
+            margin-bottom: 20px;
+
+            @include xl {
+                font-size: 38px;
+            }
+
+            @include lg {
+                font-size: 32px;
+            }
+
+            @include sm {
+                font-size: 28px;
+            }
+
+            @include xs {
+                font-size: 26px;
+                margin-bottom: 12px;
+            }
+
+            @include xxs {
+                font-size: 24px;
+            }
+        }
+
+        .rv-8-about__descr {
+            color: rgb(0 0 0 / 60%);
+
+            @include xxs {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    &__stats {
+        margin-bottom: 0;
+    }
+
+    &__stat {
+        .rv-8-about-stat__number {
+
+            @include xl {
+                font-size: 35px;
+                margin-bottom: 2px;
+            }
+
+            @include md {
+                font-size: 30px;
+            }
+
+            @include xs {
+                font-size: 28px;
+            }
+        }
+    }
+
+    &__video {
+        .rv-5-video {
+            padding: 237px 0;
+            background-image: url(/assets/img/rv-10-infos-video-bg.jpg);
+
+            @include xl {
+                padding: 197px 0;
+            }
+
+            @include lg {
+                padding: 197px 0;
+            }
+
+            @include md {
+                padding: 127px 0;
+            }
+
+            @include sm {
+                padding: 107px 0;
+            }
+
+            @include xxs {
+                padding: 67px 0;
+            }
+
+            .outer-container {
+                margin: 0 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+
+                @include md {
+                    margin: 0 12px;
+                }
+
+                h6 {
+                    color: var(--white-f);
+                    font-family: var(--oldenburg);
+                    font-size: 24px;
+                    font-weight: 400;
+                    text-decoration: 1px underline;
+
+                    @include xxs {
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            span {
+                width: 120px;
+                height: 120px;
+                position: static;
+                translate: 0 0;
+            }
+
+            a {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+                font-size: 20px;
+                background: linear-gradient(39deg, #C28109 12.69%, #FFB52D 86.22%);
+
+                &::before {
+                    background: linear-gradient(39deg, #FFB52D 12.69%, #C28109 86.22%);
+                }
+            }
+        }
+    }
+}
+
+// INDEX-12 INFOS
+.rv-12-infos {
+    background: #02564E;
+    position: relative;
+    overflow: hidden;
+
+    @include xl {
+        padding: 120px 0;
+    }
+
+    @include lg {
+        padding: 90px 0;
+    }
+
+    @include sm {
+        padding: 60px 0;
+    }
+
+    &__vectors {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+
+        &--2 {
+            bottom: 0;
+            top: auto;
+            scale: -1;
+        }
+    }
+
+    &__row {
+        --bs-gutter-y: 20px;
+
+        @include xxs {}
+    }
+}
+
+.rv-12-info {
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+    padding-bottom: 38px;
+    margin-bottom: 45px;
+
+    @include xl {
+        padding-bottom: 18px;
+        margin-bottom: 25px;
+    }
+
+    @include sm {
+        flex-direction: column;
+        row-gap: 0;
+    }
+
+    &:hover {
+        border-color: rgb(255 255 255 / 14%);
+    }
+
+    .rv-9-service__icon {
+        width: 60px;
+        height: 60px;
+        background: var(--white-f);
+
+        &::before {
+            content: none;
+        }
+    }
+
+    .rv-3-service__title {
+        color: var(--white-f);
+
+        a:hover {
+            color: #509e0f;
+        }
+    }
+
+    .rv-3-service__descr {
+        color: rgb(255 255 255 / 70%);
+    }
+}
+
+// INDEX-16 DRONE DETAILS
+.rv-16-dr_details_main_area {
+    padding: 50px 0;
+
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 30px 0;
+    }
+
+    .rv-16-dr_details_image {
+        @media #{$sm,$mobile,$sm-mobile} {
+            width: 400px;
+            height: auto;
+            margin: auto;
+        }
+
+        @media #{$mobile,$sm-mobile} {
+            width: 330px;
+        }
+
+        @media #{$sm-mobile} {
+            width: 270px;
+        }
+
+    }
+
+    .rv-16-single_dr_details {
+        padding-bottom: 70px;
+
+        @media #{$lg} {
+            padding-bottom: 30px;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            padding-bottom: 10px;
+        }
+
+        .rv-16-single_dr_details_title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #020208;
+            margin-bottom: 7px;
+            position: relative;
+            font-family: $mulish;
+
+            span.dr_sh_one {
+                position: absolute;
+                content: "";
+                right: -78%;
+                top: 16px;
+                width: 107%;
+
+                @media #{$sm,$mobile,$sm-mobile} {
+                    display: none;
+                }
+            }
+
+            span.dr_sh_two {
+                position: absolute;
+                content: "";
+                right: -51%;
+                top: 34px;
+                width: 89%;
+                transform: rotate(16deg);
+
+                @media #{$sm,$mobile,$sm-mobile} {
+                    display: none;
+                }
+            }
+
+            span.dr_sh_three {
+                position: absolute;
+                content: "";
+                right: -82%;
+                top: -22px;
+                width: 100%;
+
+                @media #{$sm,$mobile,$sm-mobile} {
+                    display: none;
+                }
+            }
+
+            span.dr_sh_four {
+                position: absolute;
+                content: "";
+                right: 38%;
+                top: 22px;
+                width: 100%;
+
+                @media #{$sm,$mobile,$sm-mobile} {
+                    display: none;
+                }
+            }
+
+            span.dr_sh_five {
+                position: absolute;
+                content: "";
+                right: 87%;
+                top: 52px;
+                width: 100%;
+                transform: rotate(350deg);
+
+                @media #{$sm,$mobile,$sm-mobile} {
+                    display: none;
+                }
+            }
+
+            span.dr_sh_six {
+                position: absolute;
+                content: "";
+                right: 110%;
+                top: -329%;
+                width: 100%;
+                transform: rotate(348deg);
+
+                @media #{$lg,$md} {
+                    top: -113%;
+                }
+
+                @media #{$sm,$mobile,$sm-mobile} {
+                    display: none;
+                }
+            }
+        }
+
+        .rv-16-single_dr_details_content {
+            color: #696969;
+            font-weight: 500;
+            font-family: $mulish;
+
+            @media #{$md} {
+                font-size: 14px;
+                line-height: 18px;
+
+            }
+        }
+    }
+}

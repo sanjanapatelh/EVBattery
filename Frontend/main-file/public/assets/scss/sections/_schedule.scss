@@ -1,0 +1,711 @@
+/* ----- 08. Schedule ----- */
+.rv-1-schedule {
+    &__tabs {
+        justify-content: center;
+        border: none;
+        gap: 15px;
+        margin-bottom: 60px;
+
+        @include md {
+            margin-bottom: 30px;
+        }
+
+        @include sm {
+            gap: 10px;
+        }
+
+        .nav-link {
+            border: 1px solid rgb(5 5 5/ 14%);
+            border-radius: 0;
+            padding: 10px 40px;
+            position: relative;
+
+            @include xl {
+                padding: 10px 30px;
+            }
+
+            @include lg {
+                padding: 8px 20px;
+            }
+
+            @include sm {
+                padding: 8px 12px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                translate: -50%;
+                width: 32px;
+                height: 17px;
+                background-color: var(--orange);
+                z-index: -1;
+                opacity: 0;
+                transition: 0.15s ease-in-out;
+                clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
+            }
+
+            &.active {
+                border-color: var(--orange);
+                background-color: var(--orange);
+                color: var(--white-f);
+
+                &::before {
+                    opacity: 1;
+                }
+
+                .title {
+                    color: var(--white-f);
+                }
+
+                .sub-title {
+                    color: rgba(255, 255, 255, 0.8);
+                }
+            }
+
+            .title {
+                display: block;
+                color: var(--black);
+                font-weight: 600;
+                font-size: 22px;
+
+                @include lg {
+                    font-size: 20px;
+                }
+
+                @include md {
+                    font-size: 18px;
+                }
+            }
+
+            .sub-title {
+                color: rgb(5 5 5/ 50%);
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-conf {
+        display: grid;
+        grid-template-columns: 27% 50% auto;
+        gap: 60px;
+        align-items: center;
+        padding: 35px 65px;
+        border: 1px solid transparent;
+        border-top-color: rgb(5 5 5/ 10%);
+        transition: 0.4s ease;
+        position: relative;
+        z-index: 1;
+        animation: confAnime 1.4s ease;
+
+        @include xl {
+            padding: 25px 35px;
+            grid-template-columns: 30% 45% auto;
+            gap: 50px;
+        }
+
+        @include lg {
+            gap: 35px;
+        }
+
+        @include md {
+            grid-template-columns: 45% 55%;
+        }
+
+        @include sm {
+            grid-template-columns: 100%;
+            justify-content: center;
+            text-align: center;
+            gap: 25px;
+        }
+
+        @include xxs {
+            gap: 15px;
+            padding: 20px;
+        }
+
+        &:hover {
+            border-color: rgb(5 5 5/ 10%);
+            border-bottom-color: transparent;
+
+            &::before {
+                opacity: 1;
+            }
+
+            .rv-1-schedule-conf__btn i {
+                background-color: var(--orange);
+                border-color: var(--orange);
+                color: var(--white-f);
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(94deg, rgba(242, 88, 76, 0.05) 0%, rgba(242, 88, 76, 0.00) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: 0.4s ease;
+        }
+
+        &:first-child {
+            border-top-color: transparent;
+
+            &:hover {
+                border-top-color: rgb(5 5 5/ 10%);
+            }
+        }
+
+        &:last-child {
+            @include md {
+                border-bottom-color: rgba(5, 5, 5, .1);
+            }
+
+            &:hover {
+                border-color: rgb(5 5 5/ 10%);
+            }
+        }
+
+        >* {
+            flex: auto;
+        }
+
+        &__author {
+            display: flex;
+            gap: 40px;
+            justify-content: space-between;
+            align-items: center;
+
+
+            @include lg {
+                gap: 15px;
+            }
+
+            &-name {
+                font-weight: 700;
+                font-size: 20px;
+                font-family: var(--mulish);
+                color: var(--black);
+                margin-bottom: 5px;
+
+                @include xxs {
+                    font-size: 18px;
+                    margin-bottom: 3px;
+                }
+            }
+
+            &-label {
+                font-weight: 500;
+                font-family: var(--mulish);
+                font-size: 15px;
+                color: rgb(5 5 5/ 60%);
+            }
+
+            &-img {
+                flex-shrink: 0;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &__details {
+            @include md {
+                // grid-column: 1/ 3;
+            }
+        }
+
+        &__name {
+            font-weight: 600;
+            font-size: 24px;
+            color: var(--black);
+            margin-bottom: 15px;
+
+            @include lg {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+
+            @include xxs {
+                font-size: 20px;
+            }
+
+            a:hover {
+                color: var(--orange);
+            }
+        }
+
+        &__infos {
+            display: flex;
+            gap: 35px;
+
+            @include sm {
+                justify-content: center;
+            }
+
+            @include xxs {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            li {
+                font-size: 15px;
+                font-weight: 500;
+                color: rgb(5 5 5/ 60%);
+                display: flex;
+                gap: 8px;
+                align-items: center;
+
+                i {
+                    color: var(--orange);
+                    font-size: 20px;
+                }
+            }
+        }
+
+        &__btn {
+            font-family: var(--mulish);
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            @include md {
+                grid-column: 1/ 3;
+                // order: 2;
+            }
+
+            @include sm {
+                grid-column: auto;
+            }
+
+            i {
+                border: 1px solid rgb(5 5 5/ 14%);
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                text-align: center;
+                line-height: 35px;
+                transition: 0.4s ease;
+                flex-shrink: 0;
+            }
+        }
+    }
+}
+
+@keyframes confAnime {
+    0% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+// INDEX-17 EVENTS
+.rv-17-events_section {
+    padding: 130px 40px;
+
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 70px 40px;
+    }
+
+    @media #{$mobile,$sm-mobile} {
+        padding: 50px 40px;
+    }
+
+    .rv-17-even_title {
+        text-align: center;
+        padding-bottom: 60px;
+
+        @media #{$mobile,$sm-mobile} {
+            padding-bottom: 40px;
+        }
+
+        .rv-17-even_sub_heading {
+            color: #000000;
+            font-weight: 600;
+            position: relative;
+            padding-left: 10px;
+            text-transform: uppercase;
+
+            &::after {
+                position: absolute;
+                content: "";
+                height: 100%;
+                width: 2px;
+                background: #DFE11B;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        .rv-17-even_heading {
+            color: #020208;
+            font-size: 50px;
+            font-weight: 800;
+            margin: 0;
+            padding-top: 7px;
+            font-family: $mulish;
+
+            @media #{$sm,$mobile,$sm-mobile} {
+                font-size: 45px;
+            }
+
+            @media #{$mobile,$sm-mobile} {
+                font-size: 35px;
+            }
+        }
+    }
+
+    .rv-17-single_even {
+        border: 1px solid rgba(2, 2, 8, 0.2);
+        padding: 80px 30px;
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            padding: 40px 20px;
+            margin-bottom: 30px;
+        }
+
+        .rv-17-single_even_meta {
+            padding-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+
+            .rv-17-single_even_date {
+                background: #D21028;
+                color: #FFFFFF;
+                padding: 4px 10px;
+                font-family: $mulish;
+            }
+
+            .rv-17-single_even_meta_catagory {
+                font-size: 15px;
+                font-weight: 500;
+                font-family: $mulish;
+                color: rgba(2, 2, 8, 0.6);
+
+                i {
+                    color: #020208;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .rv-17-single_even_content_title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-family: $mulish;
+
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                font-size: 20px;
+            }
+
+            a {
+                color: #020208;
+
+                &:hover {
+                    color: #D21028;
+                }
+            }
+        }
+
+        .rv-17-single_even_list {
+            display: flex;
+            align-items: center;
+            column-gap: 14px;
+            padding-bottom: 20px;
+
+            .rv-17-single_even_list_icon {
+                border: 1px solid rgba(2, 2, 8, 0.2);
+                height: 44px;
+                width: 44px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                color: #D21028;
+            }
+
+            span {
+                color: #020208;
+                font-weight: 500;
+                padding-bottom: 5px;
+                font-family: $mulish;
+            }
+
+            h6 {
+                color: #020208;
+                font-weight: 700;
+                margin: 0;
+                font-family: $mulish;
+
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .rv-17-single_even_btn {
+            margin-top: 30px;
+            color: #020208;
+            font-weight: 700;
+            font-size: 16px;
+            border: 1px solid rgba(2, 2, 8, 0.2);
+            width: 160px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            font-family: $mulish;
+
+            &:hover {
+                background: #DFE11B;
+                border: 1px solid transparent;
+            }
+        }
+    }
+}
+
+// INDEX-19 TIMETABLE
+.rv-19-timetable_section {
+    padding: 130px 0;
+
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 100px 0;
+    }
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding: 80px 0;
+    }
+
+    @media #{$sm,$mobile,$sm-mobile} {
+        padding: 60px 0;
+    }
+
+    .rv-19-timetable_section_top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 60px;
+
+        .rv-19-timetable_title {
+            .rv-19-timetable_heading {
+                color: #142137;
+                font-size: 60px;
+                font-weight: 800;
+                margin: 0;
+                font-family: $mulish;
+
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                    font-size: 45px;
+                }
+
+                @media #{$mobile,$sm-mobile} {
+                    font-size: 35px;
+                }
+
+                @media #{$sm-mobile} {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        .rv-19-timetable_button_area {
+            font-size: 16px;
+            font-weight: 700;
+            color: #142137;
+            width: 200px;
+            height: 54px;
+            border: 1px solid #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            background: #DFE11B;
+            column-gap: 1px;
+            position: relative;
+            z-index: 1;
+            font-family: $mulish;
+
+            .rv-19-timetable_btn {
+                border-right: 1px solid #FFFFFF;
+                width: 100%;
+                color: #142137;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: $mulish;
+            }
+
+            &:hover {
+                color: #000000;
+                letter-spacing: 1px;
+
+                i {
+                    transform: rotate(0deg);
+                }
+            }
+
+            i {
+                height: 54px;
+                width: 54px;
+                align-self: flex-end;
+                text-align: center;
+                line-height: 54px;
+                transition: all 0.4s ease;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .rv-19-timetable_image {
+        height: 100%;
+        text-align: center;
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            padding-bottom: 50px;
+            height: 620px;
+        }
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            padding-bottom: 50px;
+            height: 500px;
+        }
+
+        @media #{$mobile,$sm-mobile} {
+            padding-bottom: 0;
+            height: 420px;
+        }
+
+        @media #{$sm-mobile} {
+            padding-bottom: 0;
+            height: 350px;
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    .rv-19-timetable_calender_main_area {
+        .rv-19-timetable_calender_area {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+
+            @media #{$mobile,$sm-mobile} {
+                flex-direction: column;
+            }
+
+            .rv-19-ti_one {
+                margin-top: 40px;
+                border-left: 1px solid rgba(20, 33, 55, 0.14);
+            }
+
+            .rv-19-timetable_calender_colum {
+                border-right: 1px solid rgba(20, 33, 55, 0.14);
+                width: 100%;
+
+                @media #{$mobile,$sm-mobile} {
+                    border-left: 1px solid rgba(20, 33, 55, 0.14);
+                }
+
+                .rv-19-timetable_calender {
+                    .week_name {
+                        width: 100%;
+                        background: #EFF0F3;
+                        height: 80px;
+                        display: flex;
+                        align-items: center;
+                        padding: 0 20px;
+                        position: relative;
+
+                        @media #{$sm-mobile} {
+                            height: 60px;
+                        }
+
+                        span {
+                            position: absolute;
+                            content: "";
+                            right: 0;
+                            top: 0;
+                            color: #141414;
+                            font-size: 14px;
+                            font-weight: 500;
+                            background: #DFE11B;
+                            width: 80px;
+                            height: 20px;
+                            text-align: center;
+                            line-height: 20px;
+                            font-family: $mulish;
+                        }
+
+                        h3 {
+                            color: #141414;
+                            font-size: 30px;
+                            font-weight: 700;
+                            margin: 0;
+                            font-family: $mulish;
+                        }
+                    }
+
+                    .class_time {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        column-gap: 50px;
+                        padding: 15px 20px;
+                        border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+
+                        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                            column-gap: 25px;
+                        }
+
+                        @media #{$sm,$mobile,$sm-mobile} {
+                            column-gap: 10px;
+                        }
+
+                        p {
+                            color: rgba(20, 33, 55, 0.7);
+                            font-size: 15px;
+                            font-weight: 600;
+                            margin: 0;
+                            font-family: $mulish;
+
+                        }
+
+                        span {
+                            color: rgba(20, 33, 55, 0.7);
+                            font-weight: 600;
+                            font-size: 15px;
+                            font-family: $mulish;
+                        }
+
+                    }
+
+
+                }
+            }
+
+        }
+    }
+}

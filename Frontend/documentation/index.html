@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Organiyo - Organic Food Farming & Agriculture React js Template</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="left-side">
+            <div class="logo">
+                <a href="#">
+                    <img src="img/logo.png">
+                </a>
+            </div>
+
+            <div class="left-content">
+                <ul role="tablist">
+                    <li class="active"><a href="#one" data-toggle="tab">Welcome</a></li>
+                    <li><a href="#two" data-toggle="tab">Main File Structure</a></li>
+                    <li><a href="#env" data-toggle="tab">Environment Setup</a></li>
+                    <li><a href="#deploy" data-toggle="tab">Deployment</a></li>
+                    <li><a href="#three" data-toggle="tab">Components Structure</a></li>
+                    <li><a href="#four" data-toggle="tab">SCSS Structure</a></li>
+                    <li><a href="#five" data-toggle="tab">Redux</a></li>
+                    <li><a href="#six" data-toggle="tab">Data</a></li>
+                    <li><a href="#types" data-toggle="tab">Types</a></li>
+                    <li><a href="#seven" data-toggle="tab">Pages Structure</a></li>
+                    <li><a href="#source" data-toggle="tab">Sources & Credits</a></li>
+                    <li><a href="#support" data-toggle="tab">Support</a></li>
+                </ul>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; Copyright <a href="https://themeforest.net/user/speeddigit">Organiyo</a>
+                    <script>document.write(new Date().getFullYear())</script>.
+                </p>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="right-content">
+                <div id="one" class="content active fade in">
+                    <h1><span>Organiyo</span> - Organic Food Farming & Agriculture React js Template</h1>
+                    <div class="created">
+                        <p>Created : 06 May 2024 <br>
+                            Last Update : 06 May 2024<br>
+                            By : <a href="https://themeforest.net/user/speeddigit">SpeedDigit</a><br>
+                            Email : codebasketinfo@gmail.com<br>
+                            <br>
+                            Thank you for purchasing our Template. If you have any question, please feel free to contact
+                            us.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="two" class="content fade">
+                    <h1>Main File Structure</h1>
+                    <p>
+                        All the file are well organized, its so easy to work with the template.
+                        <br>
+                        First Unzip the mainFile.
+                        <br>
+                        <span class="bold-text">Content: </span>You will find 2 folder and 9 other files.
+                        <br>
+                        In the src folder there are 5 folders and 3 other files.
+                        <br>
+
+                        <span class="bold-text">Component Directory: </span>In the component folder there are the
+                        components of the template that are used all around and
+                        from here the components can be modifed according to your need.
+                        <br>
+
+                        <span class="bold-text">Data Directory: </span>In the data folder there is Data.tsx file in
+                        which there is all mock data used in the template.
+                        <br>
+
+                        <span class="bold-text">Pages Directory: </span>In the pages folder there are all the pages for
+                        the
+                        template. Here all the functional components are used as page element which is routed in the
+                        App.tsx using react router dom.
+                        <br>
+
+                        <span class="bold-text">Redux Directory: </span>Inside the redux folder in src which contains
+                        the redux state management store and functions.
+                        <br>
+
+                        <span class="bold-text">Types Directory: </span>In the types folder there is index.ts file in
+                        which there is all data types that can be used in the template via importing. It reduces
+                        multiple types declartion when prop drilling.
+                        <br>
+                        <span class="bold-text">Public Directory: </span>In the public folder there are static image
+                        fontawesome css, scss, images and webfonts.
+                        <br>
+                        <span class="bold-text">Other Files: </span>The rest of the files are .eslintrc.cjs, .gitignore,
+                        index.html, package-lock.json,
+                        package.json, readme, tsconfig.json, tsconfig.node.json and vite.config.ts file.
+                    </p>
+                    <img src="img/file.png" alt=""><br>
+                </div>
+
+                <div id="env" class="content fade">
+                    <h1>Environment Setup</h1>
+                    <h3>In order to use or run Organiyo on your system, Firstly, you have to setup the React
+                        environment in the system, Follow the following steps to make your system compatible for using
+                        Organiyo or any other React project.</h3>
+                    <p>
+                        <span class="bold-text">1. Install Node.js</span>
+                        <br>
+                        Node.js is a JavaScript run time built needed to run a React App. You can install the
+                        recommended version of Node.js from the official website <a
+                            href="https://nodejs.org/en/">https://nodejs.org/en/</a>
+                    </p>
+                    <h3>Steps to setup the project on the system:</h3>
+                    <p>
+                        <span class="bold-text">Step 1 - Open The main-file: </span>Open the main-file. You can either
+                        open the file in vs-code or any code editor of your choice and use the built-in terminal or you
+                        can also open the main-file in file manager and open a terminal or git bash in the root of the
+                        main-file.
+                        <br>
+                        <span class="bold-text">Step 2 - Install Node Modules: </span>To run Organiyo in local system
+                        you will need to install the node modules. You can type "npm install" command in terminal of the
+                        main-file's root.
+                        <br>
+                        <span class="bold-text">Step 3 - Running In Local Server: </span>Use "npm run dev" in the
+                        terminal to run the project in local server. Most common local server is <a
+                            href="http://localhost:5173/">http://localhost:5173/</a>.
+                        <br>
+                        <span class="bold-text">Step 4 - Creating A Production Build: </span>With "npm run
+                        build" command you can build a product build of Organiyo. If any problem arises in deployment
+                        you can try to build in local and by doing so you can identify the problem as running build
+                        command gives out specific error message if any present. You can preview the production build by
+                        running command "npm run preview".
+                    </p>
+                </div>
+
+                <div id="deploy" class="content fade">
+                    <h1>You'll typically need to follow these general steps to deploy</h1>
+                    <h3>For Hosting on Netlify:</h3>
+                    <p>
+                        1. Create a netlify Account:
+
+                        If you don't have a netlify account, you'll need to create one at <a
+                            href="https://app.netlify.com/signup">https://app.netlify.com/signup</a>.
+                        <br>
+                        2. If yoy have a github account push the main file in a repository and link the github to your
+                        netlify account.
+                        <br>
+                        3. Navigate to netlify overview:
+
+                        Click add new. Select project and if you have your github link you will see the repositories,
+                        select the repository of Organiyo.
+                        <br>
+                        4. After importing the repository you will be redirected to deployment page here you can change
+                        the project name and many other.
+                        <br>
+                        5. After selecting a name for the project just click on deploy button. It will take some time
+                        and after it will be live and a url will be given which can modified later on.
+                        <br>
+                        6. If you are importing from github continous deployment is supported in Vercel. If you update
+                        the code in github it will auto update the live site.
+                        <br>
+                        For more deployment instruction you can follow this <a
+                            href="https://nextjs.org/learn/basics/deploying-nextjs-app/platform-details"
+                            target="_blank">Link </a> of official document.
+
+                    </p>
+                    <h3>For Hosting on Vercel:</h3>
+                    <p>
+                        1. Create a Vercel Account:
+
+                        If you don't have a Vercel account, you'll need to create one at <a
+                            href="https://vercel.com/signup">https://vercel.com/signup</a>.
+                        <br>
+                        2. If yoy have a github account push the main file in a repository and link the github to your
+                        vercel account.
+                        <br>
+                        3. Navigate to Vercel overview:
+
+                        Click add new. Select project and if you have your github link you will see the repositories,
+                        select the repository of Organiyo.
+                        <br>
+                        4. After importing the repository you will be redirected to deployment page here you can change
+                        the project name and many other.
+                        <br>
+                        5. After selecting a name for the project just click on deploy button. It will take some time
+                        and after it will be live and a url will be given which can modified later on.
+                        <br>
+                        6. If you are importing from github continous deployment is supported in Vercel. If you update
+                        the code in github it will auto update the live site.
+                        <br>
+                        For more deployment instruction you can follow this <a
+                            href="https://nextjs.org/learn/basics/deploying-nextjs-app/platform-details"
+                            target="_blank">Link </a> of official document.
+
+                    </p>
+                    <h3>Deploying in Cpanel</h3>
+                    <p>
+                        1. Install Node Module: Run the command `npm install` in the project directory to install
+                        the dependencies of the Organiyo. This will install the required node modules for the
+                        project.
+                        <br>
+                        2. Build Organiyo: Run the command `npm run build` in the project directory to create a
+                        production-ready build of the Organiyo. This will generate optimized and bundled files in a
+                        `dist` directory.
+                        <br>
+                        3. Prepare your files: Select all the files in the dist directory.
+                        Zip the selected file and will be uploading it to the root directory of the domain created
+                        for Organiyo in Cpanel.
+                        <br>
+                        3. Access cPanel: Log in to your cPanel account provided by your hosting provider.
+                        <br>
+                        4. File Manager: Locate the "File Manager" or "Files" section in cPanel and open it.
+                        <br>
+                        5. Select your domain or subdomain: Choose the domain or subdomain where you want to deploy
+                        Organiyo. This will open the File Manager for that specific location.
+                        <br>
+                        6. Upload files: Inside the File Manager, click the "Upload" button or option and upload the
+                        previously zipped file. You can drag and drop the files or use the file upload interface.
+                        <br>
+                        7. Extract files (if necessary): If you uploaded a compressed file, such as a ZIP archive,
+                        select it in the File Manager and choose the "Extract" option to extract the files and
+                        folders.
+                        <br>
+                        8. Verify files: Ensure that all the files and folders from Organiyo are now present in the
+                        desired location on the server.
+                        <br>
+                        9. Access your Organiyo: After extracting the file in the file manager in the root directory of
+                        the domain,
+                        you should be able to access Organiyo by visiting your domain or subdomain in a web
+                        browser.
+                    <div>
+                        <h3>Steps to install and start in local server</h3>
+                        <p>
+                            1. Unzip the "mainFile" and you can open commad prompt in the mainFile and use command
+                            "npm install" to install node modules.
+                            <br>
+                            2. After installing node modules you can type the command "npm run dev" to open the web
+                            app in local server.
+                            <br>
+                            3. For production build use the command "npm run build".
+                        </p>
+                    </div>
+                    </p>
+                </div>
+
+                <div id="three" class="content fade">
+                    <h1>Components Structure</h1>
+                    <p>
+                        In the component folder it is cleanly organized and are proper named for better understanding
+                        for the developers and well structured for reusablity. The components are mounted in the
+                        .tsx files in pages directory according to need.
+                        There are some components which are used
+                        by passing down props which are easy to understand.
+                        There are many utils component that helps user to write code efficiently. Like to add animation
+                        of framer motion there are Custom Components like DivAnimate for Y and X axis.
+                        <br>
+                        <span class="bold-text">Customization: </span>You can customize any of the component according
+                        to your needs.
+                    </p>
+                    <img src="img/component.png" alt="">
+                </div>
+
+                <div id="four" class="content fade">
+                    <h1>SCSS Structure</h1>
+                    <p>In the public/scss folder all the scss exist for this template. "style.scss" is the root scss
+                        file of
+                        this project. It has all scss for styling and responsiveness.
+                        <br>
+                        <span class="bold-text">Customization: </span>You can customize Organiyo according to your
+                        needs in the scss file for styling.
+                    </p>
+                    <img src="img/scss.png" alt="">
+                </div>
+
+                <div id="five" class="content fade">
+                    <h1>Redux Toolkit:Streamlined State Management</h1>
+                    <h3>Centralized State Handling:</h3>
+                    <p>
+                        The Redux Toolkit, housed within the src/redux directory, serves as the nerve center for
+                        managing the application's global state.
+                        <br>
+                        This centralized approach eliminates the need for excessive prop drilling and promotes a clear,
+                        single source of truth for state data.
+                    </p>
+                    <h3>Accessing State and Dispatching Actions:</h3>
+                    <p>Components seamlessly tap into the Redux store's state and dispatch actions using two custom
+                        hooks:
+                        <br>
+                        useAppDispatch: Dispatches actions to trigger state updates.
+                        <br>
+                        useAppSelector: Selects specific slices of state for component rendering.
+                    </p>
+                    <h3>Key Advantages:</h3>
+                    <p>
+                        <span class="bold-text">Enhanced Performance:</span> Redux Toolkit's streamlined approach often
+                        leads to reduced code complexity and improved performance.
+                        <br>
+                        <span class="bold-text">Single Source of Truth:</span> A single Redux store maintains the
+                        application's state, ensuring consistency and predictability.
+                        <br>
+                        <span class="bold-text">Clear Data Flow:</span> The unidirectional data flow pattern simplifies
+                        reasoning about state changes and debugging.
+                        <br>
+                        <span class="bold-text">Well-Documented Reducer Slices:</span> Comprehensive documentation
+                        within reducer slices fosters understanding and maintainability.
+                    </p>
+                    <h3>Screenshots of Redux Store</h3>
+                    <img src="img/redux-feature.png" alt="">
+                    <img src="img/redux.png" alt="">
+                    <img src="img/redux-store.png" alt="">
+                    <img src="img/redux-provider.png" alt="">
+                    <img src="img/redux-hooks.png" alt="">
+                </div>
+
+                <div id="six" class="content fade">
+                    <h1>Data</h1>
+                    <p>The data folder contains the dummy data in the form of array from which data is fetched using
+                        map method to reduce excess code
+                        <br>
+                        <span class="bold-text">Customization: </span> Customize the Array of data with the your own
+                        data or what you want to use for the template in this data.ts file. Upload or put the images in
+                        public folder.
+                    </p>
+                    <img src="img/data.png" alt="">
+                </div>
+                <div id="types" class="content fade">
+                    <h1>Types</h1>
+                    <p>The types folder contains index.ts file that contains type declarations that are used in multiple
+                        components to reduce extra code writing.
+                        <br>
+                        <span class="bold-text">Customization: </span> You can add or update any type declaration in the
+                        index.ts file.
+                    </p>
+                    <img src="img/type.png" alt="">
+                </div>
+
+                <div id="seven" class="content fade">
+                    <h1>Pages Structure</h1>
+                    <p>In the pages folder there are multiple .tsx files which acts as pages for the template. In the
+                        App.tsx file in the root of src folder routing is created using react router dom. For a route we
+                        need to define a route and assign a main component for that route which are functional
+                        components in pages directory. For dynamic route we used slug for better user experience.
+                        <br>
+                        <span class="bold-text">Customization: </span>You can customize the pages of Organiyo in this
+                        file directory. You can add or remove components by mounting or unmounting in the .tsx file
+                        in the pages directory.
+                    </p>
+                    <img src="img/page.png" alt="">
+                    <img src="img/route.png" alt="">
+                </div>
+
+                <div id="source" class="content fade">
+                    <h1>Sources &amp; Credits</h1>
+                    <ul>
+                        <li><span>CLI</span>
+                        <li><a href="https://vitejs.dev/" target="_blank">Vite js</a></li>
+                        </li><br>
+                        <li>
+                            <span>Programming Language</span>
+                        <li>
+                            <a href="https://github.com/Microsoft/TypeScript" rel="nofollow">TypeScript</a>
+                        </li>
+                        </li><br>
+                        <li><span>Fonts</span>
+                        <li><a href="https://fonts.google.com/specimen/Inter" target="_blank">Inter</a></li>
+                        <li><a href="https://fonts.google.com/specimen/Mulish" target="_blank">Mulish</a></li>
+                        <li><a href="https://fonts.google.com/specimen/Newsreader" target="_blank">Newsreader</a></li>
+                        <li><a href="https://fonts.google.com/specimen/Oldenburg" target="_blank">Oldenburg</a></li>
+                        <li><a href="https://fonts.google.com/specimen/Philosopher" target="_blank">Philosopher</a></li>
+                        <li><a href="https://fonts.google.com/specimen/Sahitya" target="_blank">Sahitya</a></li>
+                        <li><a href="https://fonts.google.com/specimen/Poppins" target="_blank">Poppins</a></li>
+                        <li><a href="https://fonts.google.com/specimen/Open+Sans" target="_blank">Open Sans</a></li>
+                        </li>
+                        </li><br>
+                        <li><span>Icon</span>
+                        <li><a href="https://fontawesome.com/">Font Awesome</a></li>
+                        </li><br>
+
+                        <li><span>CSS Framework</span>
+                        <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+                        <li><a href="https://react-bootstrap.netlify.app/" target="_blank">React Bootstrap</a></li>
+                        </li><br>
+
+                        <li><span>React Libraries</span>
+
+                        <li><a href="https://swiperjs.com/react" target="_blank">Swiper JS</a></li>
+                        <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
+                        <li><a href="https://gsap.com/resources/React/" target="_blank">Gsap</a></li>
+                        <li><a href="https://www.framer.com/motion/" target="_blank">Framer Motion</a></li>
+                        <li><a href="https://www.npmjs.com/package/split-type" target="_blank">Split Type</a></li>
+
+                        <li><a href="https://react-hook-form.com/" target="_blank">React Hook Form</a></li>
+                        <li><a href="https://fkhadra.github.io/react-toastify/introduction/" target="_blank">React
+                                Toastify</a></li>
+                    </ul>
+                </div>
+
+                <div id="support" class="content fade">
+                    <h1>Supports</h1>
+                    <p>Thank you for reading the documentaion. If you still have any question or any problem, please
+                        contact with us. We will give you best support.</p>
+                    <a href="https://themeforest.net/user/speeddigit">SpeedDigit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

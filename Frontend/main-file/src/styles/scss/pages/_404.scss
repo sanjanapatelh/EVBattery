@@ -1,0 +1,45 @@
+/* ----- 44. ERROR 404 PAGE ----- */
+.rv-404 {
+    img {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-family: var(--mulish);
+        font-size: 40px;
+        margin-bottom: 15px;
+
+        @include xl {
+            font-size: 35px;
+        }
+
+        @include md {
+            font-size: 32px;
+        }
+
+        @include xs {
+            font-size: 30px;
+        }
+
+        @include xxs {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__sub-title {
+        font-size: 18px;
+        color: #5a5a5a;
+
+        @include xxs {
+            font-size: 16px;
+        }
+    }
+
+    &__btn {
+        background-color: #509e0f;
+        border-radius: 30px;
+        border-color: #509e0f;
+    }
+}

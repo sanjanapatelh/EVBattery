@@ -1,0 +1,106 @@
+/* ----- 15. skills ----- */
+.rv-2-skills {
+    padding: 60px 0;
+
+    @include xl {
+        padding: 20px 0;
+    }
+
+    @include md {
+        padding: 0 0 10px;
+    }
+
+    .rv-2-section-title {
+        margin-bottom: 18px;
+    }
+
+    &__img {
+        width: max-content;
+        max-width: 100%;
+
+        @include md {
+            margin: auto;
+            text-align: center;
+        }
+
+        img {
+            @include md {
+                max-width: 400px;
+            }
+
+            @include xxs {
+                height: 300px;
+            }
+        }
+    }
+
+    &__descr {
+        color: rgb(255, 255, 255, 0.60);
+        font-family: var(--mulish);
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 155.556%;
+        margin-bottom: 44px;
+
+        @include xl {
+            margin-bottom: 24px;
+        }
+
+        @include xxs {
+            font-size: 16px;
+        }
+    }
+}
+
+.rv-2-skill {
+    &:not(:last-child) {
+        margin-bottom: 22px;
+    }
+
+    &__title {
+        font-family: var(--mulish);
+        font-size: 15px;
+        font-weight: 300;
+        margin-bottom: 12px;
+
+        @include xl {
+            margin-bottom: 8px;
+        }
+
+        @include xs {
+            margin-bottom: 12px;
+        }
+    }
+
+    &-bars {
+        .progress-container {
+            width: 100%;
+            border: 1px solid rgb(255 255 255 / 10%);
+            background: linear-gradient(94deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%);
+            transform: skew(-20deg, 0);
+            padding: 7px 10px;
+        }
+
+        .progressbar {
+            width: 0;
+            background-color: #DAED1A;
+            height: 6px;
+            position: relative;
+        }
+
+        .progress-label {
+            position: absolute;
+            padding: 0 10px;
+            height: 26px;
+            line-height: 24px;
+            transform: skew(20deg) translate(0, -50%);
+            border: 1px solid #C2D600;
+            left: 100%;
+            top: 50%;
+            background: #0F0F0F;
+            font-family: var(--mulish);
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+}

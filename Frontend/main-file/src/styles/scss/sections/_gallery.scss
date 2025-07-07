@@ -1,0 +1,556 @@
+/* ----- 11. Gallery ----- */
+.rv-1-gallery {
+    background-color: #E4E4E4;
+
+    .rv-1-section-heading-2 {
+        margin-bottom: 48px;
+
+        @include xl {
+            margin-bottom: 38px;
+        }
+
+        @include sm {
+            margin-bottom: 33px;
+        }
+    }
+
+    &-slide {
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            img {
+                scale: 1.06;
+            }
+        }
+
+        img {
+            height: 540px;
+            width: 100%;
+
+            @include xl {
+                height: 430px;
+            }
+
+            @include lg {
+                height: 370px;
+            }
+
+            @include md {
+                height: 300px;
+            }
+        }
+
+        &__txt {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            padding-right: 40px;
+
+            @include xl {
+                bottom: 30px;
+                left: 25px;
+                padding-right: 25px;
+            }
+
+            @include md {
+                bottom: 20px;
+                left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        &__tag {
+            padding: 2px 15px 3px;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--black);
+            background-color: var(--white-f);
+            border-radius: 20px;
+            margin-bottom: 10px;
+            border: 1px solid var(--white-f);
+
+            &:hover {
+                background-color: transparent;
+                color: var(--white-f);
+            }
+        }
+
+        &__title {
+            margin-bottom: 0;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--white-f);
+
+            @include lg {
+                font-size: 22px;
+            }
+
+            @include md {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// INDEX-5 GALLERY
+.rv-5-gallery {
+    padding: 0 20px;
+    background: linear-gradient(to bottom, var(--white-f) 52%, #404B44 0);
+
+    @include md {
+        background: var(--white-f);
+    }
+
+    .row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+
+        @include xl {
+            --bs-gutter-x: 15px;
+            --bs-gutter-y: 15px;
+        }
+
+        @include md {
+            --bs-gutter-x: 10px;
+            --bs-gutter-y: 10px;
+        }
+    }
+
+    &__img {
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+            &::before {
+                height: 100%;
+            }
+
+            button {
+                margin-top: 0;
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            inset: 0;
+            z-index: 0;
+            background: rgba(25, 36, 29, 0.70);
+            backdrop-filter: blur(2px);
+            height: 0;
+            transition: 0.4s ease;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+            background-color: #8E5B63;
+            border: 2px solid transparent;
+            border-radius: 40px;
+            color: var(--white-f);
+            height: 54px;
+            line-height: 54px;
+            font-family: var(--mulish);
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 0 33px;
+            width: max-content;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            opacity: 0;
+
+            @include xl {
+                height: 44px;
+                line-height: 44px;
+                font-size: 14px;
+                padding: 0 23px;
+            }
+
+            @include lg {
+                height: 40px;
+                line-height: 40px;
+                font-size: 12px;
+                padding: 0 18px;
+                gap: 8px;
+            }
+
+            @include md {
+                padding: 0 10px;
+            }
+
+            &:hover {
+                background-color: transparent;
+                border-color: #8E5B63;
+            }
+
+            i {
+                font-size: 24px;
+
+                @include xl {
+                    font-size: 22px;
+                }
+
+                @include lg {
+                    font-size: 20px;
+                }
+            }
+
+            span.txt {
+                @include md {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// INDEX-9 GALLERY
+.rv-9-gallery {
+    padding: 20px;
+    padding-top: 0;
+    position: relative;
+
+    @include lg {
+        padding: 15px;
+        padding-top: 0;
+    }
+
+    &__img {
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+    &__sticker {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        background-color: var(--white-f);
+        padding: 60px 165px;
+        border-radius: 14px;
+        color: #050505;
+        text-align: center;
+        font-family: var(--mulish);
+
+        @include xl {
+            padding: 40px 145px;
+        }
+
+        @include lg {
+            padding: 30px 125px;
+        }
+
+        @include lg {
+            padding: 30px 105px;
+        }
+
+        @include xxs {
+            padding: 30px 55px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 20px;
+            border: 1px solid rgb(5 5 5 / 14%);
+            border-radius: 9px;
+            z-index: -1;
+        }
+
+        h4 {
+            font-size: 34px;
+            font-weight: 700;
+
+            @include lg {
+                font-size: 32px;
+            }
+
+            @include xxs {
+                font-size: 30px;
+            }
+        }
+
+        h6 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+    }
+}
+
+// INDEX-12 GALLERY
+.rv-12-gallery {
+    margin: 0 20px 10px;
+
+    .row-cols-5 {
+        --bs-gutter-x: 10px;
+    }
+
+    &__img {
+        &::before {
+            background-color: rgba(14, 20, 40, 0.80);
+            backdrop-filter: none;
+        }
+
+        button {
+            background: none;
+            border: none;
+            padding: 0;
+
+            i {
+                font-size: 100px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 184 / 235;
+
+        @include xxs {}
+    }
+}
+
+// INDEX-13 GALLERY
+.rv-13-gallery {
+    &__sticker {
+        border-radius: 0;
+
+        &::before {
+            border-radius: 0;
+        }
+    }
+
+    &__img {
+        img {
+            width: 100%;
+            aspect-ratio: 36 / 47;
+        }
+    }
+}
+
+// INDEX-19 GALLERY 
+.rv-19-instagrm_section {
+    padding-bottom: 80px;
+
+    @media #{$md} {
+        padding-bottom: 60px;
+    }
+
+    @media #{$sm,$sm,$mobile,$sm-mobile} {
+        padding-bottom: 40px;
+    }
+
+    .rv-19-ins_gp {
+        --bs-gutter-x: 10px;
+    }
+
+    .rv-19-single_instagrm {
+        &:hover .rv-19-single_instagrm_image .rv-19-instagrm_socials {
+            transform: scale(1);
+        }
+
+        &:hover .rv-19-single_instagrm_image {
+            img {
+                transform: scale(1.1);
+            }
+        }
+
+        .rv-19-single_instagrm_image {
+            height: 340px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+
+            @media #{$xl,$lg,$md,$sm,$mobile} {
+                height: 300px;
+            }
+
+            @media #{$md,$sm} {
+                height: 230px;
+            }
+
+            @media #{$mobile,$sm-mobile} {
+                height: 200px;
+            }
+
+            @media #{$sm-mobile} {
+                height: 180px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                transition: all 0.4s ease;
+            }
+
+            .rv-19-instagrm_socials {
+                position: absolute;
+                content: "";
+                right: 0;
+                bottom: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.4s ease;
+                height: 100%;
+                width: 100%;
+                background: rgba(223, 255, 27, 0.7);
+                transform: scale(0);
+
+                a {
+                    font-size: 50px;
+                    color: #142137;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// INDEX-21 INSTAGRAM SECTION
+.rv-21-instagrm_section {
+    padding-top: 120px;
+
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding-top: 80px;
+    }
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding-top: 60px;
+    }
+
+    @media #{$sm,$mobile,$sm-mobile} {
+        padding-top: 60px;
+    }
+
+    .rv-21-single_instagrm_slide {
+        .swiper-wrapper {
+            -webkit-transition-timing-function: linear !important;
+            transition-timing-function: linear !important;
+        }
+
+        .rv-21-single_instagrm {
+            &:hover .rv-21-single_instagrm_image .rv-21-instagrm_socials {
+                transform: scale(1);
+            }
+
+            &:hover .rv-21-single_instagrm_image {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+
+            .rv-21-single_instagrm_image {
+                height: 340px;
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.4s ease;
+
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                    height: 300px;
+                }
+
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                    height: 250px;
+                }
+
+                @media #{$sm,$mobile,$sm-mobile} {
+                    height: 200px;
+                }
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    transition: all 0.4s ease;
+                }
+
+                .rv-21-instagrm_socials {
+                    position: absolute;
+                    content: "";
+                    right: 0;
+                    bottom: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    transition: all 0.4s ease;
+                    height: 100%;
+                    width: 100%;
+                    background: rgba(14, 20, 40, 0.8);
+                    transform: scale(0);
+
+                    h4 {
+                        font-family: $mulish;
+                        margin-bottom: 10px;
+                        color: #FFFFFF;
+                        font-size: 34px;
+                        font-weight: 700;
+
+                        @media #{$md,$sm,$mobile,$sm-mobile} {
+                            font-size: 30px;
+                        }
+
+                        @media #{$sm,$mobile,$sm-mobile} {
+                            font-size: 20px;
+                        }
+                    }
+
+                    span {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #FFFFFF;
+                        margin-bottom: 30px;
+
+                        @media #{$md,$sm,$mobile,$sm-mobile} {
+                            font-size: 16px;
+                            margin-bottom: 5px;
+                        }
+
+                        @media #{$sm,$mobile,$sm-mobile} {
+                            font-size: 14px;
+                        }
+                    }
+
+                    a {
+                        font-family: $mulish;
+                        font-size: 60px;
+                        color: #FFFFFF;
+                        transition: all 0.3s ease;
+
+                        @media #{$md,$sm,$mobile,$sm-mobile} {
+                            font-size: 40px;
+                        }
+
+                        @media #{$sm,$mobile,$sm-mobile} {
+                            font-size: 30px;
+                        }
+
+                        &:hover {
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,1055 @@
+/* ----- 09. Videos ----- */
+.rv-1-video {
+    background: url(/assets/img/rv-1-video-bg.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 299px 0;
+    position: relative;
+    z-index: 1;
+
+    @include xl {
+        padding: 199px 0;
+    }
+
+    @include lg {
+        padding: 159px 0;
+    }
+
+    @include md {
+        padding: 129px 0;
+    }
+
+    @include sm {
+        padding: 109px 0;
+    }
+
+    @include xs {
+        padding: 69px 0;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background-color: rgba(2, 2, 8, 0.50);
+        backdrop-filter: blur(2px);
+    }
+
+    &__title {
+        color: var(--white-f);
+        text-transform: uppercase;
+        margin-bottom: 48px;
+
+        @include lg {
+            margin-bottom: 28px;
+        }
+    }
+
+    &__descr {
+        color: #050505;
+        font-family: var(--mulish);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 120%;
+        width: 55%;
+
+        @include sm {
+            width: 85%;
+        }
+
+        @include xxs {
+            width: 100%;
+        }
+
+        span {
+            display: inline;
+            background: linear-gradient(45deg, #EFC329, #EFC329) no-repeat;
+            background-size: 100% 100%;
+            padding: 0 2px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: flex-end;
+
+        @include md {
+            justify-content: flex-start;
+        }
+
+        @include xxs {
+            gap: 15px;
+        }
+
+        a {
+            width: 110px;
+            height: 110px;
+            flex-shrink: 0;
+            background-color: var(--white-f);
+            display: grid;
+            place-content: center;
+            border-radius: 50%;
+            color: var(--black);
+            font-size: 20px;
+
+            @include md {
+                width: 90px;
+                height: 90px;
+            }
+
+            @include xxs {
+                width: 80px;
+                height: 80px;
+            }
+
+            &:hover {
+                background-color: var(--black);
+                color: var(--white-f);
+            }
+        }
+
+        span.txt {
+            color: var(--white-f);
+            font-family: var(--mulish);
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+}
+
+// INDEX-2 VIDEO
+.rv-2-video {
+    background: url(/assets/img/rv-2-video-banner.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 295px 0;
+    text-align: center;
+
+    @include xl {
+        padding: 206px 0;
+    }
+
+    @include md {
+        padding: 136px 0;
+    }
+
+    @include xs {
+        padding: 106px 0;
+    }
+
+    @include xxs {
+        padding: 86px 0;
+    }
+
+    &__btn {
+        width: 110px;
+        height: 110px;
+        line-height: 110px;
+        background: linear-gradient(180deg, #C2D600 0%, #F0FF53 100%);
+        text-align: center;
+        border-radius: 50%;
+        font-size: 22px;
+        color: var(--black);
+        position: relative;
+        z-index: auto;
+
+        @include sm {
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+        }
+
+        @include xxs {
+            width: 80px;
+            height: 80px;
+        }
+
+        i {
+            filter: drop-shadow(0 2px 2px #AFB005);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+            width: 152%;
+            height: 152%;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(2px);
+            animation: btnAnimation 1.2s ease-in infinite alternate;
+        }
+    }
+}
+
+@keyframes btnAnimation {
+    0% {
+        width: 152%;
+        height: 152%;
+        filter: blur(0);
+        opacity: 1;
+    }
+
+    100% {
+        width: 192%;
+        height: 192%;
+        filter: blur(30px);
+        opacity: 0;
+    }
+}
+
+// INDEX-4
+.rv-4-videos {
+    padding-bottom: 100px;
+
+    @include xl {
+        padding-bottom: 80px;
+    }
+
+    @include md {
+        padding-bottom: 60px;
+    }
+
+    &__banner {
+        img {
+            @include xxs {
+                height: 180px;
+            }
+        }
+
+        .rv-4-video-btn {
+            top: 50%;
+            right: 50%;
+            translate: 50% -50%;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+
+            @include xxs {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+            }
+        }
+    }
+
+    &__row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+
+        @include lg {
+            --bs-gutter-x: 20px;
+            --bs-gutter-y: 20px;
+        }
+    }
+}
+
+.rv-4-video {
+    position: relative;
+
+
+    &-btn {
+        color: var(--white-f);
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 30px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.30);
+        background: rgba(8, 28, 21, 0.50);
+        backdrop-filter: blur(5px);
+
+        &:hover {
+            color: #a90e20;
+        }
+    }
+}
+
+// INDEX-5 VIDEO
+.rv-5-video {
+    background: url(/assets/img/rv-5-video-bg.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 360px 0;
+    position: relative;
+
+    @include xl {
+        padding: 300px 0;
+    }
+
+    @include lg {
+        padding: 250px 0;
+    }
+
+    @include sm {
+        padding: 200px 0;
+    }
+
+    @include xxs {
+        padding: 140px 0;
+    }
+
+    span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        width: 180px;
+        height: 180px;
+        backdrop-filter: blur(5px);
+        border: 1.5px solid rgba(255, 255, 255, 0.24);
+        background: rgba(255, 255, 255, 0.10);
+        border-radius: 50%;
+        z-index: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include lg {
+            width: 160px;
+            height: 160px;
+        }
+
+        @include sm {
+            width: 140px;
+            height: 140px;
+        }
+
+        @include xxs {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    a {
+        width: 110px;
+        height: 110px;
+        line-height: 110px;
+        border-radius: 50%;
+        text-align: center;
+        background: linear-gradient(28deg, #D21028 8.41%, #FF8100 93.57%);
+        color: var(--white-f);
+        font-size: 22px;
+        position: relative;
+        z-index: 1;
+
+        @include lg {
+            width: 110px;
+            height: 110px;
+            line-height: 110px;
+        }
+
+        @include sm {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+        }
+
+        @include xxs {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(212deg, #D21028 8.41%, #FF8100 93.57%);
+            z-index: -1;
+            opacity: 0;
+            transition: 0.4s ease;
+            border-radius: 50%;
+        }
+
+        i {
+            filter: drop-shadow(0 3px 1px rgb(128, 7, 58, 0.30));
+        }
+    }
+}
+
+// INDEX-6 VIDEO
+.rv-6-video {
+    background-image: url(/assets/img/rv-6-video-bg.jpg);
+    margin-right: 160px;
+    padding: 335px 0;
+    position: relative;
+
+    @include xl {
+        margin-right: 80px;
+        padding: 285px 0;
+    }
+
+    @include lg {
+        margin-right: 60px;
+        padding: 235px 0;
+    }
+
+    @include md {
+        margin-right: 0;
+        padding: 200px 0;
+    }
+
+    @include sm {
+        padding: 150px 0;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, #f5f5f5 230px, var(--white-f) 0);
+        z-index: -1;
+        right: -160px;
+    }
+
+    span {
+        width: 170px;
+        height: 170px;
+        right: 250px;
+        left: auto;
+        translate: 0 -50%;
+        background: rgb(5 5 5 / 30%);
+
+        @include lg {
+            width: 140px;
+            height: 140px;
+        }
+
+        @include md {
+            right: 50%;
+            translate: 50% -50%;
+        }
+
+        @include sm {
+            width: 120px;
+            height: 120px;
+        }
+
+        a {
+            background: linear-gradient(28deg, rgba(171, 24, 12, 0.95) 8.41%, #FF6357 93.57%);
+
+            @include lg {
+                width: 90px;
+                height: 90px;
+                line-height: 90px;
+            }
+
+            @include sm {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+            }
+
+            &::before {
+                background: linear-gradient(212deg, rgba(171, 24, 12, 0.95) 8.41%, #FF6357 93.57%);
+            }
+        }
+    }
+}
+
+// INDEX-6 VIDEO
+.rv-11-video {
+    background: url(/assets/img/rv-11-video-bg.jpg) no-repeat center center;
+    background-size: cover;
+    border-radius: 100px 0;
+    padding: 220px 0;
+    margin: 0 50px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+
+    @include xl {
+        padding: 170px 0;
+    }
+
+    @include lg {
+        padding: 140px 0;
+        margin: 0 30px;
+    }
+
+    @include md {
+        padding: 120px 0;
+    }
+
+    @include sm {
+        padding: 90px 0;
+    }
+
+    @include xs {
+        padding: 70px 0;
+        border-radius: 70px 0;
+    }
+
+    @include xxs {
+        padding: 50px 0;
+        border-radius: 50px 0;
+        margin: 0 12px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(5, 5, 5, 0.40);
+        z-index: -1;
+    }
+
+    &__btn {
+        width: 100px;
+        height: 100px;
+        line-height: 103px;
+        border-radius: 20px 0px;
+        background: rgba(255, 255, 255, 0.20);
+        backdrop-filter: blur(5px);
+        color: var(--white-f);
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 25px;
+
+        @include lg {
+            margin-bottom: 18px;
+        }
+
+        @include md {
+            width: 90px;
+            height: 90px;
+            line-height: 93px;
+        }
+
+        @include xxs {
+            width: 80px;
+            height: 80px;
+            line-height: 83px;
+            margin-bottom: 10px;
+            font-size: 35px;
+        }
+    }
+
+    h2 {
+        color: var(--white-f);
+        font-family: var(--mulish);
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 113.636%;
+        width: 35%;
+        margin: auto;
+
+        @include xl {
+            font-size: 40px;
+        }
+
+        @include lg {
+            font-size: 36px;
+            width: 50%;
+        }
+
+        @include md {
+            font-size: 32px;
+            width: 60%;
+        }
+
+        @include sm {
+            font-size: 30px;
+            width: 80%;
+        }
+
+        @include xs {
+            font-size: 26px;
+            width: 80%;
+        }
+
+        @include xxs {
+            font-size: 24px;
+            width: 100%;
+        }
+    }
+}
+
+// INDEX-14 VIDEO
+.rv-14-video {
+    background: url(/assets/img/rv-14-video-bg.jpg) no-repeat center center;
+    background-size: cover;
+    margin-left: 100px;
+    margin-right: auto;
+    padding: 273px 0;
+    position: relative;
+
+    @include xxl {
+        padding: 223px 0;
+    }
+
+    @include xl {
+        margin-left: 80px;
+        padding: 183px 0;
+    }
+
+    @include lg {
+        margin-left: 60px;
+        padding: 163px 0;
+    }
+
+    @include md {
+        margin-left: 0;
+        padding: 123px 0;
+    }
+
+    @include sm {
+        padding: 103px 0;
+    }
+
+    @include xxs {
+        padding: 73px 0;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100px;
+        background-image: linear-gradient(to bottom, #174E5E 230px, var(--white-f) 0);
+        height: 100%;
+        width: 100px;
+    }
+
+    a {
+        font-size: 140px;
+        color: rgba(255, 255, 255, 0.40);
+        line-height: 0.7;
+
+        i {
+            position: relative;
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+            overflow: hidden;
+            line-height: 0.88;
+
+            span {
+                position: absolute;
+                background-color: var(--white-f);
+                width: 13px;
+                height: 55px;
+                left: 0;
+                animation: slideX 1.8s linear alternate infinite;
+
+                &.stroke-2 {
+                    bottom: -15px;
+                    rotate: 60deg;
+                    animation-name: slide2;
+                }
+
+                &.stroke-3 {
+                    top: -15px;
+                    rotate: -60deg;
+                    animation-name: slide3;
+                }
+            }
+        }
+    }
+}
+
+@keyframes slideX {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(70px);
+    }
+}
+
+@keyframes slide2 {
+    0% {
+        transform: translateY(-14px);
+    }
+
+    100% {
+        transform: translateY(-85px);
+    }
+}
+
+@keyframes slide3 {
+    0% {
+        transform: translateY(85px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+// INDEX-19 VIDEO
+.rv-19-video_section {
+    .video_image {
+        position: relative;
+        z-index: 1;
+        height: 870px;
+        width: 100%;
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            height: 700px;
+        }
+
+        @media #{$lg,$sm,$mobile,$sm-mobile} {
+            height: 500px;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            height: 450px;
+        }
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            height: 300px;
+        }
+
+        @media #{$mobile,$sm-mobile} {
+            height: 250px;
+        }
+
+        @media #{$sm-mobile} {
+            height: 200px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%
+        }
+
+        .video_btn {
+            @include play_btn;
+            background-color: #DFE11B;
+            z-index: 1;
+            color: #080202;
+
+            &:hover {
+                background: #080202;
+                color: #DFE11B;
+            }
+        }
+    }
+}
+
+// INDEX-20 VIDEO
+.rv-20-video_section {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-image: url(/assets/img/video/home-6-video-1.png);
+    padding: 150px 0 200px 0;
+
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 100px 0 170px 0;
+        padding: 100px 0;
+    }
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding: 70px 0 150px 0;
+    }
+
+    .rv-20-video_section_heading {
+        .rv-20-video_sub_title {
+            color: #FFFFFF;
+            font-weight: 500;
+            font-size: 16px;
+            width: 250px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 4px;
+            margin-bottom: 30px;
+
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                width: 200px;
+            }
+
+            @media #{$mobile} {
+                width: 180px;
+            }
+
+            @media #{$sm-mobile} {
+                margin-bottom: 15px;
+                width: 150px;
+            }
+
+            span {
+                height: 5px;
+                width: 5px;
+                background: #FFFFFF;
+                border-radius: 50%;
+            }
+        }
+
+        .rv-20-video_section_title {
+            font-size: 50px;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 60px;
+            font-family: $mulish;
+
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                font-size: 40px;
+            }
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                font-size: 30px;
+            }
+
+            @media #{$sm,$mobile} {
+                font-size: 24px;
+            }
+
+            @media #{$mobile} {
+                font-size: 20px;
+            }
+
+            @media #{$sm-mobile} {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .rv-20-video_button {
+        position: relative;
+
+        .video_btn {
+            @include play_btn;
+            background-color: #FFFFFF;
+            z-index: 1;
+            color: #2D6A4F;
+            font-family: $mulish;
+
+            &:hover {
+                background: #2D6A4F;
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+// INDEX-24 VIDEO
+.rv-24-video_section {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: rgba(2, 2, 8, 0.70);
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .rv-24-video_content {
+        text-align: center;
+        padding: 150px 0;
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            padding: 100px 0;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            padding: 70px 0;
+        }
+
+        @media #{$mobile,$sm-mobile} {
+            padding: 60px 0;
+        }
+
+        .rv-24-room_rating {
+            padding-bottom: 20px;
+
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                padding-bottom: 10px;
+            }
+
+            i {
+                color: #FFB422;
+            }
+        }
+
+        .rv-24-video_sub_title {
+            font-family: $mulish;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                margin-bottom: 10px;
+            }
+        }
+
+        .rv-24-video_title {
+            font-family: $mulish;
+            color: #FFFFFF;
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 60px;
+
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                margin-bottom: 30px;
+            }
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                font-size: 30px;
+                margin-bottom: 25px;
+            }
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+        }
+
+        .rv-24-video_button {
+
+            .rv-24-video_btn {
+                font-family: $mulish;
+                @include play_btn;
+                background-color: #A58051;
+                position: inherit;
+                color: #FFFFFF;
+                transform: inherit;
+
+                &:hover {
+                    background: #FFFFFF;
+                    color: #A58051;
+                }
+            }
+        }
+    }
+
+}
+
+// INDEX-25 VIDEO 
+.rv-25-video {
+    &_section {
+        background-position: center;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 250px;
+        position: relative;
+
+        @media #{$lg} {
+            padding-top: 200px;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            padding-top: 80px;
+        }
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            padding-top: 200px;
+        }
+    }
+
+    &_btn {
+        @include play_btn;
+        left: 80%;
+        top: 40%;
+        background: linear-gradient(28deg, #FF006B 8.41%, #FF8100 93.57%);
+        box-shadow: 0px 4px 10px 0px rgba(176, 8, 79, 0.40);
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            left: 50%;
+            top: 22%;
+        }
+
+        &:hover {
+            color: linear-gradient(28deg, #FF006B 8.41%, #FF8100 93.57%);
+        }
+    }
+
+    &_info {
+        display: flex;
+        align-items: center;
+        background: #A07549;
+        padding: 50px;
+        column-gap: 60px;
+
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            padding: 30px;
+        }
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            padding: 20px;
+            column-gap: 30px;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            padding: 20px;
+            row-gap: 30px;
+            flex-direction: column;
+        }
+
+    }
+
+    &_logo {
+        height: 120px;
+        width: 99px;
+        margin: auto;
+        flex: 0 0 25%;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &_txt {
+        color: rgba(255, 255, 255, 0.3);
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        font-size: 16px;
+        padding-left: 60px;
+        font-family: $mulish;
+
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            padding-left: 30px;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            padding-top: 30px;
+            padding-left: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: 0;
+        }
+
+        a {
+            color: #FFFFFF;
+            text-decoration: underline;
+            display: inline;
+
+            &:hover {
+                color: #1e3932;
+                text-decoration: underline;
+            }
+        }
+    }
+}

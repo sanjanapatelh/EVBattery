@@ -1,0 +1,58 @@
+/* ----- 28. Function ----- */
+.rv-8-functions {
+    @include xl {
+        padding: 40px 0;
+    }
+
+    @include md {
+        padding: 30px 0;
+    }
+}
+
+.rv-8-function {
+    background-color: rgba(28, 116, 233, 0.06);
+    padding: 54px 40px 48px;
+    font-family: var(--mulish);
+    color: #050505;
+
+    @include xl {
+        padding: 34px 25px 28px;
+    }
+
+    &__img {
+        width: 100px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 42px;
+
+        @include lg {
+            width: 80px;
+            height: 60px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 4px;
+
+        @include lg {
+            font-size: 22px;
+        }
+
+        @include md {
+            font-size: 20px;
+        }
+
+        a:hover {
+            color: #1c74e9;
+        }
+    }
+
+    &__sub-title {
+        font-size: 15px;
+        font-weight: 500;
+        opacity: 0.7;
+    }
+}

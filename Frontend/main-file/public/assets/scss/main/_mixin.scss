@@ -1,0 +1,104 @@
+@mixin rv_btn {
+    background-color: transparent;
+    border: 1px solid #666666;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-size: 17px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 700;
+    color: #FFFFFF;
+    transition: 0.5s ease-out;
+    padding: 12px 28px;
+
+    &:hover {
+        color: #020208;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        transform: skew(90deg) translate(-50%, -50%);
+        position: absolute;
+        inset: 50%;
+        left: 25%;
+        z-index: -1;
+        transition: .5s ease-out;
+        background-color: #DFE11B;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        inset: 50%;
+        left: 25%;
+        z-index: -1;
+        transition: .5s ease-out;
+        background-color: #DFE11B;
+        top: -50%;
+        left: -25%;
+        transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    &:hover::before {
+        transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    &:hover::after {
+        transform: skew(45deg) translate(-50%, -50%);
+    }
+}
+
+@mixin slide_btn {
+    i {
+        height: 50px;
+        width: 50px;
+        background: transparent;
+        text-align: center;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(2, 2, 8, 0.1);
+        color: #020208;
+        transition: 0.3s;
+
+        &:hover {
+            background: #DFE11B;
+            border: 1px solid transparent;
+        }
+    }
+}
+
+@mixin play_btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #F35B04;
+    color: #FFFFFF;
+    display: inline-block;
+    text-align: center;
+    line-height: 70px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1.5s linear infinite;
+
+    &:hover {
+        background: #FFFFFF;
+        color: #F35B04;
+    }
+
+    @media #{$sm,$mobile,$sm-mobile} {
+        height: 55px;
+        width: 55px;
+        line-height: 55px;
+    }
+}

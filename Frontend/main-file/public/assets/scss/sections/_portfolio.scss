@@ -1,0 +1,2144 @@
+/* ----- 18. Portfolio ----- */
+.rv-2-porfolios {
+    padding: 60px 0 103px;
+
+    @include xl {
+        padding: 60px 0 73px;
+    }
+
+    @include md {
+        padding: 60px 0 53px;
+    }
+}
+
+.rv-2-porfolio {
+    position: relative;
+
+    &:hover {
+        a {
+            scale: 1;
+            opacity: 1;
+        }
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgb(15 15 15 / 80%);
+        opacity: 0;
+        transition: 0.4s ease;
+        z-index: 1;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        height: 50px;
+        line-height: 50px;
+        width: 50px;
+        color: var(--white-f);
+        border: 1px solid rgb(255 255 255 / 30%);
+        border-radius: 50%;
+        text-align: center;
+        font-size: 18px;
+        scale: 1.2;
+        opacity: 0;
+        z-index: 2;
+    }
+}
+
+.rv-2-swiper-dots {
+    margin-top: 60px;
+    text-align: center;
+
+    @include xl {
+        margin-top: 30px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 26px;
+        height: 26px;
+        opacity: 1;
+        border: 1px solid transparent;
+        position: relative;
+        background-color: transparent;
+        transition: 0.4s ease;
+        vertical-align: top;
+        border-radius: 50%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            width: 8px;
+            height: 8px;
+            background-color: rgb(255 255 255 / 20%);
+            border-radius: 50%;
+            transition: 0.4s ease;
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+        border-color: #DAED1A;
+
+        &::before {
+            background-color: #DAED1A;
+        }
+    }
+}
+
+// INDEX-3 PROJECTS
+.rv-3-projects {
+    background-color: #F4F4F4;
+
+    &__slider {
+        margin: 0 30px;
+
+        @include xxs {
+            margin: 0 12px;
+        }
+    }
+}
+
+.rv-3-project {
+    width: 25%;
+    position: relative;
+    z-index: 1;
+
+    @include xxl {
+        width: 27%;
+    }
+
+    @include xl {
+        width: 30%;
+    }
+
+    &:hover {
+        .rv-3-project {
+            &__img::before {
+                opacity: 1;
+            }
+
+            &__actions {
+
+                a,
+                button {
+                    translate: 0;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &.swiper-slide-next {
+        width: calc(50% - 60px);
+
+        @include xxl {
+            width: calc(46% - 50px);
+        }
+
+        @include xl {
+            width: calc(40% - 40px);
+        }
+    }
+
+    &__img {
+        position: relative;
+        margin-bottom: 34px;
+
+        @include xl {
+            margin-bottom: 19px;
+        }
+
+        @include lg {
+            margin-bottom: 14px;
+        }
+
+        img {
+            transition: 0.4s ease;
+            height: 470px;
+            width: 100%;
+
+            @include xl {
+                height: 370px;
+            }
+
+            @include lg {
+                height: 250px;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgb(169, 114, 64, 0.70);
+            z-index: 0;
+            opacity: 0;
+            transition: 0.4s ease;
+        }
+    }
+
+    &__actions {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        display: flex;
+        gap: 10px;
+        z-index: 2;
+
+        button,
+        a {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            background-color: rgb(255 255 255 / 20%);
+            border-radius: 50%;
+            font-size: 22px;
+            color: var(--white-f);
+            translate: -50% 0;
+            opacity: 0;
+
+            &:last-child {
+                translate: 50% 0;
+            }
+        }
+    }
+
+    &__sub-title {
+        color: rgb(5, 5, 5, 0.70);
+        position: relative;
+        font-family: var(--mulish);
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        padding-left: 12px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            border-radius: 30px;
+            opacity: 0.7;
+            background: #050505;
+            width: 6px;
+            height: 6px;
+            top: 50%;
+            left: 0;
+            translate: 0 -50%;
+        }
+    }
+
+    &__title {
+        color: #050505;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 0;
+
+        @include xl {
+            font-size: 22px;
+        }
+
+        @include lg {
+            font-size: 20px;
+        }
+
+        @include md {
+            font-size: 18px;
+        }
+    }
+}
+
+// INDEX-5 PORTFOLIOS
+.rv-5-portfolios {
+    display: flex;
+    position: relative;
+    height: 770px;
+    overflow: hidden;
+    transition: 0.4s ease;
+    flex-wrap: wrap;
+
+    @include xxl {
+        height: 620px;
+    }
+
+    @include xl {
+        height: 550px;
+    }
+
+    @include xs {
+        height: auto;
+    }
+}
+
+.rv-5-portfolio {
+    flex: auto;
+    display: flex;
+    align-items: flex-end;
+
+    @include lg {
+        flex: 50%;
+        border-bottom: 1px solid rgba(255, 255, 255, .15);
+    }
+
+    @include xs {
+        flex: 100%;
+    }
+
+    &:hover {
+        .rv-5-portfolio__txt {
+            background-color: rgba(54, 78, 63, 0.60);
+            backdrop-filter: blur(5px);
+        }
+    }
+
+    &:not(:last-child) {
+        border-right: 1px solid rgb(255 255 255 / 15%);
+    }
+
+    &__img {
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.7s ease-in-out;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        scale: 1.04;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &__txt {
+        background-color: transparent;
+        padding: 55px 60px 52px;
+        width: 100%;
+        color: var(--white-f);
+        transition: 0.4s ease;
+
+        @include xxl {
+            padding: 35px 35px 32px;
+        }
+
+        @include xl {
+            padding: 30px 30px 27px;
+        }
+
+        @include xxs {
+            padding: 25px 25px 22px;
+        }
+    }
+
+    &__infos {
+        margin-bottom: 7px;
+        color: rgb(255, 255, 255, 0.7);
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    &__name {
+        margin-bottom: 0;
+        color: #FFF;
+        font-family: var(--philosopher);
+        font-size: 30px;
+        font-weight: 700;
+
+        @include xxl {
+            font-size: 28px;
+        }
+
+        @include xl {
+            font-size: 25px;
+        }
+    }
+}
+
+// INDEX-8 PORTFOLIO 
+.rv-8-projects {
+    padding: 60px 0;
+
+    @include xl {
+        padding: 40px 0;
+    }
+
+    @include md {
+        padding: 30px 0;
+    }
+
+    &__slider {
+        margin: 0 30px;
+
+        @include xs {
+            margin: 0 20px;
+        }
+
+        @include xxs {
+            margin: 0 12px;
+        }
+    }
+
+    .rv-3-section-heading {
+        margin-bottom: 42px;
+
+        @include lg {
+            margin-bottom: 27px;
+        }
+
+        @include md {
+            margin-bottom: 22px;
+        }
+
+        @include sm {
+            row-gap: 15px;
+        }
+
+        @include xxs {
+            row-gap: 10px;
+        }
+    }
+
+    .rv-3-project {
+        width: 27.7%;
+
+        @include xxl {
+            width: 29.7%;
+        }
+
+        @include xl {
+            width: 32.7%;
+        }
+
+        &.swiper-slide-next {
+            width: calc(100% - (27.7% * 2 + 60px));
+
+            @include xxl {
+                width: calc(40.6% - 50px);
+            }
+
+            @include xl {
+                width: calc(34% - 40px);
+            }
+        }
+
+        &__img {
+            margin-bottom: 22px;
+            transition: none;
+
+            @include lg {
+                margin-bottom: 12px;
+            }
+
+            img {
+                height: 600px;
+
+                @include xxl {
+                    height: 550px;
+                }
+
+                @include xl {
+                    height: 450px;
+                }
+
+                @include lg {
+                    height: 380px;
+                }
+
+                @include md {
+                    height: 350px;
+                }
+
+                @include xxs {
+                    height: 250px;
+                }
+            }
+
+            &::before {
+                background: rgb(28, 116, 233, 0.86);
+            }
+        }
+
+        &__actions button {
+            translate: 0 50%;
+        }
+
+        &__title {
+            font-weight: 700;
+            font-family: var(--mulish);
+        }
+    }
+}
+
+// INDEX-9 PROJECTS
+.rv-9-projects {
+    overflow: hidden;
+
+    @include xl {
+        padding: 40px 0;
+    }
+
+    @include md {
+        padding: 30px 0;
+    }
+
+    .rv-3-section-heading {
+        margin-bottom: 39px;
+
+        @include xl {
+            margin-bottom: 24px;
+        }
+
+        @include lg {
+            margin-bottom: 18px;
+        }
+
+        @include sm {
+            margin-bottom: 8px;
+            gap: 8px 20px;
+        }
+
+        @include xs {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.rv-9-project {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1;
+
+    &:hover {
+        &::before {
+            opacity: 0;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        z-index: 1;
+        opacity: 0.7;
+        background: linear-gradient(180deg, rgba(8, 28, 21, 0.00) 0%, #081C15 100%);
+        transition: 0.4s ease;
+    }
+
+    .rv-3-project__img {
+        margin-bottom: 0;
+
+        &::before {
+            background: linear-gradient(48deg, rgba(101, 171, 3, 0.90) 12.77%, rgba(101, 171, 3, 0.27) 98.77%);
+        }
+
+        img {
+            height: 600px;
+
+            @include xl {
+                height: 500px;
+            }
+
+            @include lg {
+                height: 400px;
+            }
+        }
+    }
+
+    &__txt {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 50px 38px;
+        color: var(--white-f);
+        z-index: 1;
+
+        @include xl {
+            padding: 0 30px 23px;
+        }
+
+        @include lg {
+            padding: 0 25px 18px;
+        }
+    }
+
+    .rv-3-project__sub-title {
+        color: var(--white-f);
+
+        &::before {
+            background-color: var(--white-f);
+        }
+    }
+
+    &__title {
+        color: var(--white-f);
+        font-family: var(--mulish);
+        font-size: 30px;
+        font-weight: 700;
+        line-height: normal;
+
+        @include xl {
+            font-size: 28px;
+        }
+
+        @include lg {
+            font-size: 25px;
+        }
+
+        a:hover {
+            color: #050505;
+        }
+    }
+}
+
+// INDEX-10 PROJECTS
+.rv-10-projects {
+    border-radius: 40px;
+    height: 845px;
+
+    @include xxl {
+        height: 685px;
+    }
+
+    @include xl {
+        height: 665px;
+    }
+
+    @include lg {
+        height: 625px;
+    }
+
+    @include sm {
+        height: auto;
+    }
+
+    &.container {
+        padding: 0;
+
+        @media screen and (min-width:1496px) {
+            max-width: calc(100% - 200px);
+        }
+    }
+
+    &__txt {
+        border-radius: 20px 20px 0px 0px;
+        background: rgba(5, 5, 5, 0.50);
+        backdrop-filter: blur(10px);
+        padding: 50px;
+        color: var(--white-f);
+        min-width: 550px;
+        right: 215px;
+        bottom: 0;
+        position: absolute;
+
+        @include xxl {
+            padding: 40px;
+            min-width: 540px;
+            right: 125px;
+        }
+
+        @include xl {
+            padding: 35px;
+            min-width: 500px;
+            right: 65px;
+        }
+
+        @include lg {
+            min-width: 480px;
+        }
+
+        @include md {
+            padding: 30px;
+            min-width: 460px;
+        }
+
+        @include sm {
+            position: static;
+            min-width: auto;
+            margin-top: 290px;
+            margin-left: auto;
+        }
+
+        @include xs {
+            padding: 30px 20px;
+        }
+    }
+
+    .rv-10-section__title {
+        font-size: 44px;
+        margin-bottom: 40px;
+
+        @include xl {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        @include lg {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        @include xs {
+            font-size: 30px;
+
+        }
+    }
+}
+
+.rv-10-project {
+    padding: 22px 35px;
+    transition: 0.4s ease;
+
+    @include xl {
+        padding: 20px 25px;
+    }
+
+    @include lg {
+        padding: 15px;
+    }
+
+    @include sm {
+        padding: 12px 15px;
+    }
+
+    &:hover {
+        background-color: #EFC329;
+        border-radius: 10px;
+
+        .rv-10-project {
+            &__order {
+                color: rgba(5, 5, 5, 0.3);
+            }
+
+            &__sub-title {
+                color: rgb(5, 5, 5, 0.7);
+            }
+
+            &__title {
+                color: var(--black);
+            }
+
+            &__btn {
+                color: var(--black);
+
+                i {
+                    rotate: 45deg;
+                }
+            }
+        }
+    }
+
+    &:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+    }
+
+    &__txt {
+        display: flex;
+        gap: 22px;
+        width: 100%;
+
+        @include xs {
+            flex-direction: column;
+        }
+    }
+
+    &__order {
+        color: rgb(255, 255, 255, 0.3);
+        font-family: var(--mulish);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 0.9;
+    }
+
+    &__middle {
+        flex-grow: 1;
+    }
+
+    &__sub-title {
+        color: rgb(255, 255, 255, 0.7);
+        font-family: var(--mulish);
+        font-size: 15px;
+        font-weight: 400;
+        margin-bottom: 6px;
+    }
+
+    &__title {
+        color: var(--white-f);
+        font-family: var(--mulish);
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 0;
+    }
+
+    &__btn {
+        font-size: 45px;
+        line-height: 1;
+        color: var(--white-f);
+
+        i {
+            transition: rotate 0.4s ease;
+        }
+    }
+}
+
+// INDEX-11 PROJECTS
+.rv-11-projects {
+    // background: url(/assets/img/rv-11-project-bg.jpg) no-repeat center center;
+    background-size: cover;
+
+    &__heading {
+        @include xl {
+            margin-bottom: 28px;
+        }
+
+        @include sm {
+            gap: 6px 20px;
+        }
+
+        .rv-9-section-heading__right {
+            @include sm {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__slider {
+        margin: 0 30px;
+    }
+
+    .rv-11-section__sub-title {
+        margin-left: 0;
+        color: var(--white-f);
+
+        @include sm {
+            margin-inline: auto;
+        }
+
+        .stroke-1,
+        .stroke-2 {
+            background-color: rgb(255 255 255 / 40%);
+
+            &::before,
+            &::after {
+                background-color: rgb(255 255 255 / 40%);
+            }
+        }
+
+        .stroke-1 {
+            display: none;
+
+            @include sm {
+                display: block;
+            }
+        }
+    }
+
+    .rv-11-section__title {
+        color: var(--white-f);
+    }
+}
+
+.rv-11-project {
+    overflow: hidden;
+    transition: 0.4s ease;
+
+    &:hover {
+        border-radius: 50px 0;
+
+        .rv-3-project__img img {
+            scale: 1.1;
+        }
+
+        .rv-9-project__txt {
+            opacity: 1;
+            translate: 0 0;
+        }
+    }
+
+    .rv-3-project__img {
+        margin-bottom: 0;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
+
+        &::before {
+            z-index: 1;
+        }
+    }
+
+    &__sub-title {
+        color: var(--white-f);
+        font-size: 15px;
+        font-family: var(--mulish);
+        font-weight: 500;
+    }
+
+    .rv-9-project__txt {
+        opacity: 0;
+        transition: 0.4s ease;
+        translate: 0 30px;
+
+        @include lg {
+            padding: 0 20px 10px;
+        }
+
+        @include md {
+            padding: 0 15px 5px;
+        }
+    }
+
+    .rv-9-project__title {
+        font-size: 24px;
+
+        @include lg {
+            font-size: 22px;
+        }
+    }
+}
+
+.rv-11-slider-nav {
+
+    button {
+        border-radius: 0px 14px;
+        background: rgba(255, 255, 255, 0.20);
+        backdrop-filter: blur(5px);
+        color: var(--white-f);
+
+        @include lg {
+            width: 42px;
+            height: 42px;
+            line-height: 40px;
+        }
+
+        &:hover {
+            background-color: var(--white-f);
+            color: var(--black);
+            border-color: var(--white-f);
+        }
+    }
+}
+
+// INDEX-12 PROJECTS
+.rv-12-projects {
+    background-color: #EEF6E7;
+
+    @include xxs {
+        padding-inline: 12px;
+    }
+
+    .rv-12-slider-nav button {
+        background-color: var(--white-f);
+        border-color: var(--white-f);
+        box-shadow: 0px 1px 2px 0px rgba(5, 5, 5, 0.20);
+
+        &:hover {
+            background-color: #509E0F;
+            border-color: #509E0F;
+            box-shadow: 0px 1px 2px 0px transparent;
+        }
+    }
+}
+
+.rv-12-project {
+    opacity: 50%;
+
+    &.swiper-slide-active {
+        opacity: 1;
+    }
+
+    &__img {
+        img {
+            width: 100%;
+            // height: 570px;
+            height: auto;
+            aspect-ratio: 129/67;
+        }
+    }
+}
+
+// INDEX-15 PROJECTS
+.rv-15-work_main_area {
+    padding: 100px 0;
+    position: relative;
+
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 90px 0;
+    }
+
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 80px 0;
+    }
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding: 70px 0;
+    }
+
+    @media #{$sm,$mobile,$sm-mobile} {
+        padding: 60px;
+    }
+
+    @media #{$mobile,$sm-mobile} {
+        padding: 50px 0;
+    }
+
+    @media #{$sm-mobile} {
+        padding: 40px 0;
+    }
+
+    .rv-15-work_title_heading {
+        font-size: 50px;
+        font-weight: 600;
+        color: #050505;
+        max-width: 670px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 60px;
+        font-family: $mulish;
+
+        @media #{$xs} {
+            font-size: 30px;
+        }
+    }
+
+    .rv-15-work_area_slide {
+        width: 100%;
+
+        position: relative;
+
+        .rv-15-work_iamge {
+            height: 570px;
+
+            @media #{$xl,$lg,$md,$sm} {
+                height: 460px;
+            }
+
+            @media #{$lg,$md} {
+                height: 420px;
+            }
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                height: 400px;
+            }
+
+            @media #{$sm,$mobile,$sm-mobile} {
+                height: 330px;
+            }
+
+            @media #{$mobile,$sm-mobile} {
+                height: 300px;
+            }
+
+            @media #{$sm-mobile} {
+                height: 250px;
+            }
+
+            img {
+                display: block;
+                width: 80%;
+                height: 100%;
+
+                @media #{$md,$sm,$mobile,$sm-mobile} {
+                    width: 80%;
+                    height: 100%;
+                }
+            }
+
+        }
+
+        .rv-15-work_content_main {
+            position: absolute;
+            top: 20%;
+            right: 5%;
+            height: 400px;
+            width: 300px;
+
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                top: 12%;
+                right: 5%;
+                height: max-content;
+            }
+
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                top: inherit;
+                bottom: 0;
+                right: 5%;
+                height: max-content;
+            }
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                // width: 250px;
+                // height: max-content;
+                // top: 3%;
+                // right: 5%;
+            }
+
+            @media #{$sm-mobile} {
+                width: 211px;
+                height: max-content;
+                top: 11%;
+                right: 0;
+            }
+
+            .rv-15-work_content_area {
+
+                .rv-15-work_content {
+                    text-align: left;
+                    background: #000;
+                    color: #fff;
+                    padding: 50px 30px;
+
+                    @media #{$md,$sm,$mobile,$sm-mobile} {
+                        padding: 35px 25px;
+                    }
+
+                    span {
+                        padding-bottom: 50px;
+                        display: inline-block;
+                        color: #D9D9D9;
+
+                        @media #{$md,$sm,$mobile,$sm-mobile} {
+                            padding-bottom: 25px;
+                        }
+                    }
+
+                    .rv-15-work_content_title {
+                        padding-bottom: 50px;
+                        font-size: 24px;
+                        font-weight: 700;
+                        font-family: $mulish;
+
+                        @media #{$md,$sm,$mobile,$sm-mobile} {
+                            padding-bottom: 25px;
+                            font-size: 20px;
+                        }
+
+                        @media #{$sm-mobile} {
+                            padding-bottom: 11px;
+                            font-size: 15px;
+                        }
+
+                        a {
+                            color: #FFFFFF;
+                            transition: 0.5s;
+                            font-family: $mulish;
+
+                            &:hover {
+                                color: #F35B04;
+                            }
+                        }
+                    }
+
+                    .rv-15-work_content_btn {
+                        color: #fff;
+                        text-decoration: none;
+                        font-size: 18px;
+                        transition: 0.5s;
+                        font-family: $mulish;
+
+                        &:hover {
+                            color: #F35B04;
+                            letter-spacing: 1.1px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .rv-15-work_button_area {
+        margin-top: 50px;
+        color: #050505;
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+
+        @media #{$mobile,$sm-mobile} {
+            margin-top: 30px;
+        }
+
+        .rv-15-work_slide_btn_next,
+        .rv-15-work_slide_btn_prev {
+            color: #050505;
+
+            @media #{$sm-mobile} {
+                width: 163px;
+                font-size: 14px;
+            }
+
+            i {
+                color: #050505;
+                font-size: 20px;
+            }
+
+            span {
+                color: #050505;
+                margin: 0 10px;
+
+                @media #{$sm-mobile} {
+                    display: none;
+                }
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+// INDEX-20 PORTFOLIO
+.rv-20-portfolio_section {
+    .rv-20-ins_gp {
+        --bs-gutter-x: 10px;
+    }
+
+
+    .rv-20-single_portfolio {
+        &:hover .rv-20-single_portfolio_image .rv-20-portfolio_content {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        &:hover .rv-20-single_portfolio_image {
+            img {
+                transform: scale(1.1);
+            }
+        }
+
+        .rv-20-single_portfolio_image {
+            height: 500px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                height: 400px;
+            }
+
+            @media #{$lg,$md} {
+                height: 320px;
+            }
+
+            @media #{$sm,$mobile} {
+                height: 200px;
+                ;
+            }
+
+            @media #{$sm-mobile} {
+                height: 150px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                transition: all 0.4s ease;
+                object-fit: cover;
+            }
+
+            .rv-20-portfolio_content {
+                position: absolute;
+                content: "";
+                right: 0;
+                bottom: 0;
+                height: 95%;
+                width: 95%;
+                background: rgba(8, 28, 21, 0.9);
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                transition: all 0.4s ease;
+
+                .rv-20-portfolio_content_icon {
+                    position: absolute;
+                    right: 30px;
+                    top: 30px;
+                    height: 50px;
+                    width: 50px;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 50px;
+                    font-size: 25px;
+                    color: #FFFFFF;
+                    transition: all 0.3s ease;
+
+                    @media #{$sm,$mobile,$sm-mobile} {
+                        height: 40px;
+                        width: 40px;
+                        line-height: 40px;
+                        font-size: 20px;
+                    }
+                }
+
+                .rv-20-portfolio_content_txt {
+                    position: absolute;
+                    bottom: 30px;
+                    left: 30px;
+
+                    @media #{$sm,$mobile,$sm-mobile} {
+                        bottom: 20px;
+                        left: 20px;
+                    }
+
+                    p {
+                        font-family: $mulish;
+                        margin-bottom: 4px;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+
+                    h3 {
+                        font-family: $mulish;
+                        font-size: 24px;
+                        font-weight: 700;
+                        color: #FFFFFF;
+                        margin: 0;
+
+                        @media #{$sm,$mobile,$sm-mobile} {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// INDEX-23 PROJECTS
+.rv-23-project_section {
+    padding: 120px 0;
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background: #F2F2F2;
+
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 100px 0;
+    }
+
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 80px 0;
+    }
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding: 70px 0;
+    }
+
+    @media #{$sm,$mobile,$sm-mobile} {
+        padding: 60px 0;
+    }
+
+    @media #{$mobile,$sm-mobile} {
+        padding: 50px 0;
+    }
+
+    @media #{$sm-mobile} {
+        padding: 35px 0;
+    }
+
+    .rv-23-project_section_top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+
+        @media #{$mobile,$sm-mobile} {
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+
+        .rv-23-project_sub_title {
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 700;
+            background: #020208;
+            padding: 1px 4px;
+            display: inline-block;
+            font-family: $mulish;
+        }
+
+        .rv-23-project_title {
+            color: #020208;
+            font-size: 46px;
+            font-weight: 800;
+            font-family: $mulish;
+
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                font-size: 40px;
+            }
+
+            @media #{$sm,$mobile,$sm-mobile} {
+                font-size: 30px;
+            }
+        }
+
+        .rv-23-project_button {
+            text-align: right;
+            align-self: flex-end;
+
+            .rv-23-project_btn {
+                font-size: 16px;
+                font-weight: 700;
+                color: #020208;
+                font-family: $mulish;
+                background: transparent;
+                border: 1px solid rgba(2, 2, 8, 0.1);
+                width: 210px;
+                height: 54px;
+                transition: all 0.5s ease;
+                position: relative;
+                text-align: center;
+                line-height: 54px;
+                z-index: 1;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: #3BA52D;
+                    width: 0%;
+                    height: 100%;
+                    transition: all 0.4s ease;
+                    z-index: -1;
+                    left: auto;
+                }
+
+                &:hover::before {
+                    width: 100%;
+                    left: 0;
+                }
+
+                &:hover {
+                    color: #FFFFFF;
+
+                }
+            }
+        }
+    }
+
+
+    .rv-23-project_image_tab {
+        overflow: hidden !important;
+
+        .rv-23-project_image {
+            height: 540px;
+            width: 100%;
+            overflow: hidden !important;
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                height: 300px;
+            }
+
+            @media #{$sm,$mobile,$sm-mobile} {
+                height: 200px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+
+            }
+        }
+    }
+
+    .rv-23-project_list_area {
+        border-top: 1px solid #D9D9D9;
+        border-bottom: 1px solid #D9D9D9;
+        margin-left: 20px;
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            margin: 30px 0 0 0;
+        }
+
+        .nav-link {
+            margin-bottom: 0;
+            background: 0 0;
+            border: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            display: block;
+            padding: 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .rv-23-single_project_list {
+            align-items: center;
+            position: relative;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 40px;
+            transition: all 0.3s ease;
+            z-index: 1;
+
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                padding: 40px 15px;
+            }
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                padding: 40px 15px;
+                margin: 0;
+            }
+
+            @media #{$mobile,$sm-mobile} {
+                padding: 25px 15px;
+                margin: 0;
+            }
+
+            &:hover {
+                background: #3BA52D;
+
+                .rv-23-single_project_list_title {
+                    color: #FFFFFF;
+                }
+
+                .rv-23-single_project_list_icon i {
+                    color: #FFFFFF;
+                }
+            }
+
+            &:hover .rv-23-single_project_list_iamge {
+                transform: scale(1);
+            }
+
+            .rv-23-single_project_number {
+                position: absolute;
+                left: 6%;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 100px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: normal;
+                color: rgba(2, 2, 8, 0.6);
+                opacity: 0.2;
+                z-index: -1;
+                font-family: $mulish;
+
+                @media #{$sm-mobile} {
+                    font-size: 70px;
+                }
+            }
+
+            .rv-23-single_project_list_title {
+                font-size: 20px;
+                font-weight: 700;
+                color: #020208;
+                margin: 0;
+                max-width: 40%;
+                transition: all 0.3s ease;
+                text-align: left;
+
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                    font-size: 18px;
+                }
+
+                @media #{$sm-mobile} {
+                    font-size: 12px;
+                    max-width: 50%;
+                }
+            }
+
+            .rv-23-single_project_list_iamge {
+                height: 200px;
+                width: 150px;
+                margin: auto;
+                position: absolute;
+                bottom: -22px;
+                left: 55%;
+                transform: scale(0);
+                transition: all 0.3s ease;
+
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                    left: 50%;
+                }
+
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                    left: 50%;
+                    height: 180px;
+                    width: 125px;
+                    bottom: -10px;
+                }
+
+                @media #{$mobile,$sm-mobile} {
+                    height: 145px;
+                    left: 50%;
+                    width: 125px;
+                    bottom: -10px;
+                }
+
+                @media #{$sm-mobile} {
+                    height: 122px;
+                    left: 50%;
+                    width: 80px;
+                    bottom: -10px;
+                }
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .rv-23-single_project_list_icon i {
+                text-align: center;
+                color: #020208;
+                font-size: 60px;
+                rotate: -45deg;
+                transition: all 0.3s ease;
+
+                @media #{$sm-mobile} {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+}
+
+
+// INDEX-24 ROOMS
+.rv-24-room_section {
+    padding: 120px 20px 240px 20px;
+    background: #F6F3F0;
+
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 100px 20px 200px 20px;
+    }
+
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 80px 20px 200px 20px;
+    }
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding: 70px 20px 200px 20px;
+    }
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding: 60px 20px 200px 20px;
+    }
+
+    .rv-24-room_sub_title {
+        color: #020208;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-family: $mulish;
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            margin-bottom: 10px;
+        }
+    }
+
+    .rv-24-room_title {
+        color: #020208;
+        font-size: 44px;
+        font-weight: 800;
+        margin-bottom: 60px;
+        font-family: $mulish;
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            font-size: 30px;
+            margin-bottom: 35px;
+        }
+
+        @media #{$mobile,$sm-mobile} {
+            font-size: 23px;
+            margin-bottom: 30px;
+        }
+
+        @media #{$sm-mobile} {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .rv-24-room_image_slide {
+        overflow: visible;
+    }
+
+    .swiper-slide-active.rv-24-room_image .rv-24-room_info {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .rv-24-room_image {
+        width: auto;
+        height: 440px;
+        position: relative;
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            height: 400px;
+        }
+
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            height: 350px;
+        }
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            height: 300px;
+        }
+
+        @media #{$mobile,$sm-mobile} {
+            height: 250px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .rv-24-room_price {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            padding: 10px 15px;
+            background: #FFFFFF;
+            border-radius: 20px;
+
+            p {
+                font-family: $mulish;
+                font-size: 14px;
+                font-weight: 700;
+                color: #4E4E52;
+                margin: 0;
+            }
+
+            span {
+                font-family: $mulish;
+                font-size: 20px;
+                font-weight: 700;
+                color: #A58051;
+            }
+        }
+
+        .rv-24-room_info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 40px;
+            background: #FFFFFF;
+            border-radius: 20px;
+            visibility: hidden;
+            opacity: 0;
+
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+                padding: 15px 20px;
+            }
+
+            .rv-24-room_inf_txt {
+                span {
+                    font-family: $mulish;
+                    color: rgba(2, 2, 8, 0.7);
+                    font-size: 14px;
+                    font-weight: 500;
+
+                    @media #{$sm,$mobile,$sm-mobile} {
+                        font-size: 12px;
+                    }
+                }
+
+                h4 {
+                    font-family: $mulish;
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: #020208;
+                    margin: 0;
+
+                    @media #{$sm,$mobile,$sm-mobile} {
+                        font-size: 18px;
+                    }
+
+                    @media #{$sm-mobile} {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .rv-24-room_info_btn {
+                font-size: 16px;
+                font-weight: 700;
+                color: #FFFFFF;
+                background: #A58051;
+                border: 1px solid #A58051;
+                width: 190px;
+                height: 54px;
+                transition: all 0.5s ease;
+                position: relative;
+                text-align: center;
+                line-height: 54px;
+                z-index: 1;
+                display: inline-block;
+                font-family: $mulish;
+
+                @media #{$sm,$mobile,$sm-mobile} {
+                    width: 160px;
+                    height: 50px;
+                    line-height: 50px;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: rgba(2, 2, 8);
+                    width: 0%;
+                    height: 100%;
+                    transition: all 0.4s ease;
+                    z-index: -1;
+                    left: auto;
+                }
+
+                &:hover::before {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    .rv-24-room_next {
+        position: absolute;
+        right: 34%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        @include slide_btn;
+        background: #FFFFFF;
+        color: #020208;
+        border-radius: 50%;
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            right: 26%;
+        }
+
+        @media #{$sm-mobile} {
+            right: 0%;
+        }
+
+        &:hover {
+            i {
+                background: #020208;
+                color: #FFFFFF;
+                border: 1px solid transparent;
+            }
+        }
+    }
+
+    .rv-24-room_prev {
+        position: absolute;
+        left: 34%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        @include slide_btn;
+        background: #FFFFFF;
+        color: #020208;
+        border-radius: 50%;
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            left: 26%;
+        }
+
+        @media #{$sm-mobile} {
+            left: 0%;
+        }
+
+        &:hover {
+            i {
+                background: #020208;
+                color: #FFFFFF;
+                border: 1px solid transparent;
+            }
+        }
+    }
+}
+
+
+// INDEX-25 CASE STUDIES
+.rv-25-case_studies {
+    &_section {
+        padding: 140px 20px 120px 20px;
+        background: #D6DEC9;
+        position: relative;
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            padding: 120px 0 100px 0;
+        }
+
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            padding: 100px 0 80px 0;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            padding: 80px 0 60px 0;
+        }
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            padding: 60px 0 40px 0;
+        }
+
+        @media #{$mobile,$sm-mobile} {
+            padding: 45px 0 30px 0;
+        }
+
+        @media #{$sm-mobile} {
+            padding: 40px 0 20px 0;
+        }
+    }
+
+    &_section_top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 50px;
+        padding: 0;
+
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            margin-bottom: 40px;
+        }
+
+        @media #{$mobile,$sm-mobile} {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+
+    &_heading {
+        flex-basis: 50%;
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            flex-basis: 60%;
+        }
+    }
+
+    &_sub_title {
+        color: #020208;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        @media #{$mobile,$sm-mobile} {
+            margin-bottom: 10px;
+        }
+    }
+
+    &_title {
+        color: #020208;
+        font-size: 46px;
+        font-weight: 700;
+        margin: 0;
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            font-size: 40px;
+        }
+
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            font-size: 35px;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            font-size: 30px;
+        }
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            font-size: 23px;
+        }
+
+        @media #{$sm-mobile} {
+            font-size: 22px;
+        }
+    }
+
+    &_slide_button_area {
+        display: flex;
+        column-gap: 20px;
+
+        .rv-25-case_studies_next,
+        .rv-25-case_studies_prev {
+            z-index: 1;
+            background: transparent;
+            color: #020208;
+            border-radius: 50%;
+            @include slide_btn;
+
+            &:hover {
+                i {
+                    background: #A07549;
+                    color: #FFFFFF;
+                    border: 1px solid transparent;
+                }
+            }
+        }
+    }
+
+    &_image {
+        width: auto;
+        height: auto;
+        position: relative;
+        z-index: 2;
+
+        @media #{$xxl,$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            height: 500px;
+        }
+
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            height: 400px;
+        }
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            height: 350px;
+        }
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            height: 300px;
+        }
+
+        @media #{$sm,$mobile,$sm-mobile} {
+            height: 250px;
+        }
+
+        &:hover::before {
+            transform: scale(1);
+        }
+
+        &:hover .rv-25-case_studies_info {
+            bottom: 50px;
+            opacity: 1;
+            transform: scale(1);
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                bottom: 30px;
+                left: 30px;
+            }
+
+            @media #{$sm,$mobile,$sm-mobile} {
+                bottom: 25px;
+                left: 25px;
+            }
+
+            @media #{$mobile,$sm-mobile} {
+                bottom: 25px;
+                left: 20px;
+            }
+        }
+
+        &:hover .rv-25-case_studies_info_btn {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        img {
+            height: 100% !important;
+            width: 100%;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.86;
+            background: #A07549;
+            transform: scale(0);
+            transition: all 0.4s linear;
+        }
+
+        .rv-25-case_studies_info {
+            position: absolute;
+            bottom: -60px;
+            left: 50px;
+            transition: all 0.4s linear;
+            font-family: $mulish;
+            opacity: 0;
+            transform: scale(0);
+
+            .rv-25-case_studies_inf_txt {
+                span {
+                    color: #FFFFFF;
+                    font-size: 15px;
+                    font-weight: 500;
+                    font-family: $mulish;
+                }
+
+                h4 {
+                    font-size: 24px;
+                    font-weight: 700;
+                    font-family: $mulish;
+                    color: #FFFFFF;
+                    margin: 0;
+
+                    @media #{$sm,$mobile,$sm-mobile} {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .rv-25-case_studies_info_btn {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: transparent;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: inline-block;
+            transform: translate(-50%, -50%);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.4s ease;
+
+            @media #{$sm,$mobile,$sm-mobile} {
+                height: 40px;
+                width: 40px;
+                line-height: 40px;
+            }
+        }
+    }
+
+
+
+}

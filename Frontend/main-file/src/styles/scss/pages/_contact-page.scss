@@ -1,0 +1,133 @@
+/* ----- 43. CONTACT INNER PAGE ----- */
+.rv-inner-contact {
+    &-info-cards {
+        margin-bottom: 24px;
+        display: flex;
+        gap: 24px;
+
+        @include md {
+            flex-wrap: wrap;
+        }
+
+        @include sm {
+            gap: 22px;
+        }
+
+        @include xxs {
+            gap: 20px;
+        }
+
+        >* {
+            flex: auto;
+        }
+    }
+
+    &-info {
+        background: linear-gradient(94deg, #f9f9f9, #fdfdfd);
+        border: 1px solid #fdfdfd;
+        padding: 30px 40px;
+
+        @include xl {
+            padding: 25px 30px;
+        }
+
+        @include lg {
+            padding: 20px 25px;
+        }
+
+        @include xxs {
+            padding: 20px;
+        }
+
+        &__heading {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 6px 15px;
+            margin-bottom: 15px;
+
+            @include lg {
+                margin-bottom: 10px;
+            }
+        }
+
+        &__icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: var(--white-f);
+            flex-shrink: 0;
+            display: grid;
+            place-content: center;
+            font-size: 22px;
+
+            @include lg {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        &__title {
+            margin-bottom: 0;
+            font-size: 22px;
+            font-family: var(--mulish);
+            font-weight: 700;
+
+            @include lg {
+                font-size: 20px;
+            }
+        }
+
+        .rv-5-footer-timings li {
+            color: var(--black);
+            font-size: 16px;
+            font-weight: 500;
+            gap: 6px 15px;
+            flex-wrap: wrap;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: var(--black);
+
+                &:hover {
+                    color: #509e0f;
+                }
+            }
+        }
+    }
+
+    &__txt {
+        border-color: #f9f9f9;
+        background: linear-gradient(94deg, #f9f9f9, #fdfdfd);
+    }
+
+    &__form {
+
+        input,
+        select,
+        textarea,
+        button {
+            border-color: #dedede;
+            color: var(--black);
+        }
+
+
+        button {
+            border-color: #509e0f;
+            background-color: #509e0f;
+            color: var(--white-f);
+
+            &:hover {
+                color: var(--black);
+            }
+        }
+
+        option {
+            background-color: var(--white-f);
+        }
+    }
+}

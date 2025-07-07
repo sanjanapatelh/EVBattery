@@ -1,0 +1,490 @@
+/*----- 39. SHOP PAGE STYLES STARTS HERE -----*/
+.rv-shop-area {
+    &__top-actions {
+        margin-bottom: 60px;
+
+        @include xl {
+            margin-bottom: 40px;
+        }
+
+        @include xs {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__right-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 40px;
+        align-items: center;
+
+        @include md {
+            justify-content: center;
+        }
+
+        @include xs {
+            flex-wrap: wrap;
+            row-gap: 12px;
+            column-gap: 20px;
+        }
+    }
+
+    &__view-type {
+        display: flex;
+        gap: 20px;
+
+        button {
+            font-size: 22px;
+            color: rgb(5 5 5 / 30%);
+
+            &.active {
+                color: rgb(5 5 5);
+            }
+        }
+    }
+
+    .showed-products-number {
+        font-family: var(--mulish);
+        text-transform: capitalize;
+        font-size: 15px;
+        font-weight: 600;
+        color: #5D626C;
+
+        button {
+            color: #5D626C;
+            position: relative;
+            padding-right: 10px;
+
+            &:hover {
+                color: #050505;
+            }
+            &:first-child {
+                padding-left: 10px;
+            }
+
+            &:not(:last-child) {
+                &::before {
+                    content: "\002F";
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+            &.active {
+                color: #000;
+            }
+        }
+    }
+
+    form {
+        position: relative;
+        border-bottom: 1px solid rgba(5, 5, 5, .14);
+        padding-bottom: 10px;
+
+        &::before {
+            content: "\f107";
+            position: absolute;
+            bottom: 50%;
+            transform: translateY(50%);
+            right: 0;
+            font-family: "Font Awesome 6 Pro";
+            color: rgba(5, 5, 5, .60);
+        }
+    }
+
+    select {
+        border: none;
+        color: #050505;
+        font-family: Mulish;
+        font-size: 15px;
+        font-weight: 600;
+        appearance: none;
+        padding-right: 20px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.rv-shop-sidebar {
+    &-single-area {
+        li {
+            a {
+                display: flex;
+                justify-content: space-between;
+                color: rgb(5 5 5 / 60%);
+                margin-bottom: 18px;
+
+                &:hover {
+                    color: var(--black);
+                }
+            }
+
+            &:last-child {
+                a {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .active {
+            a {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.rv-color-variants-area {
+    li a {
+        position: relative;
+        padding-left: 28px;
+        justify-content: flex-start;
+        gap: 3px;
+
+        &::before {
+            content: attr(data-color);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            translate: 0 -50%;
+            background-color: #FF4040;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+        }
+
+        &.lilac {
+            &::before {
+                background-color: #9955BB;
+            }
+        }
+
+        &.mulberry {
+            &::before {
+                background-color: #3C3845;
+            }
+        }
+
+        &.graphite {
+            &::before {
+                background-color: #BBE7C5;
+            }
+        }
+
+        &.tangerine {
+            &::before {
+                background-color: #F08204;
+            }
+        }
+
+        &.porcelain {
+            &::before {
+                background-color: #6E8B61;
+            }
+        }
+    }
+}
+
+.rv-price-filter {
+    .noUi {
+        &-target {
+            background: rgba(5, 5, 5, 0.10);
+            border-radius: 4px;
+            height: 4px;
+            border: none;
+            box-shadow: none;
+        }
+
+        &-connect {
+            background-color: #509e0f;
+        }
+
+        &-handle {
+
+            &::after,
+            &::before {
+                content: none;
+            }
+        }
+
+        &-horizontal {
+            .noUi-handle {
+                border: none;
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                right: -3px;
+                cursor: pointer;
+                background: var(--white-f);
+                box-shadow: 0px 4px 14px 0px rgba(30, 31, 33, 0.24);
+            }
+        }
+    }
+
+    .filtered-price {
+        margin-top: 25px;
+        color: rgb(5 5 5 / 60%);
+        font-size: 14px;
+        font-weight: 500;
+        flex-direction: column;
+        row-gap: 20px;
+
+        &__title {
+            text-transform: uppercase;
+            margin-right: 5px;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        &__number {
+            display: flex;
+            gap: 2px;
+        }
+        .filter-info {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.rv-inner-products-container {
+    >.row {
+        @include xl {
+            --bs-gutter-x: 20px;
+            --bs-gutter-y: 20px;
+        }
+
+        @include md {
+            --bs-gutter-x: 15px;
+            --bs-gutter-y: 15px;
+        }
+    }
+
+    .col {
+        &.list-view-on {
+            width: 100% !important;
+
+            >* {
+                display: flex;
+                border: 1px solid #eef6e7;
+                align-items: center;
+                text-align: left;
+
+                @include xxs {
+                    flex-direction: column;
+                }
+
+                .rv-3-product__img {
+                    width: max-content;
+                    height: auto;
+                    margin: 0;
+                    min-width: 280px;
+                    padding: 50px 30px;
+                    align-self: stretch;
+                    flex-shrink: 0;
+
+                    @include sm {
+                        min-width: auto;
+                        max-width: 200px;
+                    }
+
+                    @include xxs {
+                        max-width: 100%;
+                        width: 100%;
+                    }
+                }
+
+                .rv-3-product__txt {
+                    padding: 30px;
+
+                    @include xs {
+                        padding: 20px;
+                    }
+                }
+
+                .rv-inner-product__descr {
+                    display: block;
+                }
+
+                &:hover .rv-3-product__price {
+                    translate: 0 0;
+                    opacity: 1;
+                }
+
+                .rv-3-product__cart-btn {
+                    position: static;
+                    opacity: 1;
+                    text-align: left;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+.rv-inner-product {
+    background-color: #F4F4F4;
+    border: none;
+    text-align: center;
+    overflow: hidden;
+    padding: 50px 25px 45px;
+
+    @include xl {
+        padding: 40px 25px 35px;
+    }
+
+    @include lg {
+        padding: 30px 25px 25px;
+    }
+
+    @include xs {
+        padding: 20px 25px 15px;
+    }
+
+    &:hover {
+        .rv-inner-product__hover-img {
+            opacity: 1;
+            pointer-events: all;
+
+            img {
+                transform: rotate(0deg) scale(1);
+            }
+        }
+
+        .rv-3-product__cart-btn {
+            background-color: var(--black);
+            color: var(--white-f);
+        }
+    }
+
+    .rv-3-product__actions {
+        z-index: 5;
+
+        button {
+            background: none;
+            border: none;
+            width: auto;
+            height: auto;
+
+            &:hover {
+                background: none;
+                border: none;
+                color: var(--black);
+            }
+        }
+    }
+
+    .rv-7-product__tag {
+        background-color: var(--black);
+    }
+
+    .rv-3-product__price {
+        margin-bottom: 2px;
+    }
+
+    .rv-3-product__cart-btn {
+        position: relative;
+        opacity: 1;
+        pointer-events: all;
+        line-height: 1;
+        color: var(--black);
+        z-index: 5;
+        width: max-content;
+        padding: 14px 32px 13px;
+
+        &:hover {
+            color: #509e0f;
+        }
+
+        i {
+            margin-right: 2px;
+        }
+    }
+
+    &__hover-img {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.4s ease;
+
+        img {
+            width: 100%;
+            height: 100%;
+            transform: rotate(10deg) scale(1.5);
+        }
+    }
+
+    &__descr {
+        display: none;
+        margin-bottom: 12px;
+        color: rgb(5 5 5 / 80%);
+    }
+}
+
+.rv-shop-pagination {
+    .page-numbers {
+        display: flex;
+        gap: 10px;
+        margin-top: 50px;
+
+        @include lg {
+            margin-top: 35px;
+        }
+
+        @include xxs {
+            justify-content: center;
+        }
+    }
+
+    .page-number-btn {
+        border: 1px solid rgba(5, 5, 5, 0.10);
+        text-align: center;
+        font-size: 14px;
+        font-family: var(--mulish);
+        font-weight: 700;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        color: rgb(5 5 5 / 60%);
+
+        @include md {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        @include xxs {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+        }
+
+        &:hover,
+        &.current {
+            background-color: #509e0f;
+            border-color: #509e0f;
+            color: var(--white-f);
+        }
+    }
+}
+
+/*----- SHOP PAGE STYLES ENDS HERE -----*/
+
+
+// INNER GALLERY 
+.rv-inner-gallery {
+    &-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+
+        @include lg {
+            --bs-gutter-y: 15px;
+            --bs-gutter-x: 15px;
+        }
+    }
+}

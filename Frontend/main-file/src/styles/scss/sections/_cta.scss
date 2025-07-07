@@ -1,0 +1,500 @@
+/* ----- 35. CTA ----- */
+.rv-14-nwsltr__form {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+
+    @include lg {
+        gap: 35px;
+    }
+
+    @include xxs {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .nwsltr-left {
+        width: 100%;
+    }
+
+    input {
+        border-bottom: 1px solid rgba(2, 2, 8, 0.10);
+        padding-bottom: 18px;
+
+        @include sm {
+            padding-bottom: 10px;
+        }
+
+        &::placeholder {
+            color: rgb(2, 2, 8, 0.7);
+            font-family: var(--mulish);
+            font-size: 15px;
+            line-height: 66.667%;
+        }
+    }
+
+    .nwsltr-checkbox {
+        color: rgb(2, 2, 8, 0.5);
+        font-family: var(--mulish);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 71.429%;
+    }
+
+    button {
+        font-weight: 700;
+        font-family: var(--mulish);
+
+        &:hover {
+            color: #509e0f;
+            color: #f2584c;
+        }
+
+        i {
+            font-size: 22px;
+            opacity: 1;
+        }
+    }
+}
+
+.rv-14-nwsltr__checkbox {
+    @include sm {
+        padding-top: 12px;
+    }
+
+    label,
+    a {
+        color: rgb(2, 2, 8, 0.5);
+        font-family: var(--mulish);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 71.429%;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+// INDEX-22 CTA
+.rv-22-cta_section {
+    position: relative;
+    z-index: 1;
+    padding: 180px 0 300px 0;
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 100px 0 220px 0;
+    }
+
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        padding: 100px 0 200px 0;
+    }
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding: 80px 0 190px 0;
+    }
+
+    @media #{$mobile,$sm-mobile} {
+        padding: 70px 0 180px 0;
+    }
+
+    @media #{$sm-mobile} {
+        padding: 60px 0 170px 0;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(4, 14, 31, 0.60);
+        z-index: -1;
+    }
+
+    .rv-22-cta_section_content {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            margin-bottom: 30px;
+        }
+
+        .rv-22-cta_sub_title {
+            position: relative;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            display: inline-block;
+
+            .rv8_sub_pre_nex {
+                font-family: $mulish;
+                content: "";
+                background: rgba(255, 255, 255, 0.6);
+                width: 60px;
+                height: 1px;
+                position: absolute;
+                right: -80%;
+                top: 50%;
+                transform: translateY(-50%);
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    height: 8px;
+                    width: 8px;
+                    left: -15px;
+                    background: #9a9ea5;
+                    border-radius: 50%;
+                    transform: translateY(-50%);
+                    animation: slide-right 2.5s linear infinite alternate both;
+                    top: 0;
+
+                    @-webkit-keyframes slide-right {
+                        0% {
+                            left: 0;
+                        }
+
+                        100% {
+                            left: 100%;
+                        }
+                    }
+
+                    @keyframes slide-right {
+                        0% {
+                            left: 0;
+                        }
+
+                        100% {
+                            left: 100%;
+                        }
+                    }
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: 8px;
+                    width: 8px;
+                    right: -15px;
+                    background: #9a9ea5;
+                    border-radius: 50%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    animation: slide-left 2.5s linear infinite alternate both;
+                    top: 0;
+
+                    @-webkit-keyframes slide-left {
+                        0% {
+                            right: 0;
+                        }
+
+                        100% {
+                            right: 100%;
+                        }
+                    }
+
+                    @keyframes slide-left {
+                        0% {
+                            right: 0;
+                        }
+
+                        100% {
+                            right: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .rv-22-cta_title {
+            color: #FFFFFF;
+            font-size: 46px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            font-family: $mulish;
+
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                font-size: 40px;
+            }
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                margin-bottom: 40px;
+                font-size: 35px;
+            }
+
+            @media #{$sm,$mobile,$sm-mobile} {
+                margin-bottom: 30px;
+                font-size: 25px;
+            }
+
+            @media #{$sm-mobile} {
+                margin-bottom: 30px;
+                font-size: 18px;
+            }
+        }
+
+        .rv-22-cta_content_btn {
+            font-size: 16px;
+            font-weight: 700;
+            color: #FFFFFF;
+            background: #B38D3F;
+            padding: 15px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            font-family: $mulish;
+
+            @media #{$sm-mobile} {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                background-color: #FFFFFF;
+                width: 100%;
+                height: 0%;
+                left: 50%;
+                top: 50%;
+                border-radius: 0px;
+                transform: translate(-50%, -50%) rotate(-45deg);
+                z-index: -1;
+                transition: all 0.4s ease;
+            }
+
+            &:hover {
+                color: #000000;
+            }
+
+            &:hover::before {
+                height: 400%;
+            }
+        }
+
+
+
+
+    }
+
+    .rv-22-cta_time_box_area {
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        padding: 60px 40px;
+
+        @media #{$md,$sm,$mobile,$sm-mobile} {
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 30px;
+            font-family: $mulish;
+
+            @media #{$sm-mobile} {
+                font-size: 20px;
+            }
+        }
+
+        .rv-22-cta_time {
+
+            .rv-22-single_cta_time {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+                padding-bottom: 15px;
+                margin-bottom: 20px;
+
+                h5,
+                span {
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 15px;
+                    margin: 0;
+                    font-family: $mulish;
+
+                    @media #{$sm-mobile} {
+                        font-size: 12px;
+                    }
+
+                }
+            }
+        }
+
+        .rv-22-cta_time_box_btn {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 16px;
+            font-weight: 700;
+            color: #FFFFFF;
+            background: transparent;
+            padding: 15px 25px;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            display: block;
+            text-align: center;
+
+            @media #{$sm-mobile} {
+                padding: 12px 15px;
+            }
+
+            &:hover {
+                background: #FFFFFF;
+                color: #000000;
+            }
+        }
+    }
+}
+
+// INDEX-24 BOOKING SECTION
+.rv-24-hotel_booking_section {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    padding: 100px 0;
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+        padding: 80px 0;
+    }
+
+    @media #{$mobile,$sm-mobile} {
+        padding: 50px 0;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: rgba(2, 2, 8, 0.70);
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .rv-24-room_booking {
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(10px);
+
+        .rv-24-form {
+            display: flex;
+            padding: 30px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                column-gap: 25px;
+                padding: 20px;
+            }
+
+            .rv-24-form_single_box {
+                display: flex;
+                column-gap: 10px;
+                color: #FFFFFF;
+
+                i {
+                    color: #FFFFFF;
+                    font-size: 20px;
+                    margin-top: 5px;
+                }
+
+                .rv-24-form_inputbox {
+                    position: relative;
+                    width: 135px;
+
+                    label {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: #FFFFFF;
+                    }
+
+                    input,
+                    select {
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 14px;
+                        font-weight: 500;
+                        background: transparent;
+                        font-family: $mulish;
+                        border: none;
+
+                        option {
+                            background: rgba(4, 14, 31, 0.1);
+                            color: #040E1F;
+                            padding: 0 10px;
+                            font-family: $mulish;
+                        }
+                    }
+
+                    select:focus {
+                        outline: none;
+                    }
+
+                    #CheckIn::-webkit-calendar-picker-indicator {
+                        /* Hide the default calendar icon in Chrome */
+                        background-color: white;
+                        font-size: 12px;
+                        border-radius: 50%;
+                        padding: 5px;
+                        font-family: $mulish;
+                    }
+
+                    #CheckOut::-webkit-calendar-picker-indicator {
+                        /* Hide the default calendar icon in Chrome */
+                        background-color: white;
+                        font-size: 12px;
+                        border-radius: 50%;
+                        padding: 5px;
+                        font-family: $mulish;
+                    }
+
+                    #CheckOut::-moz-calendar-picker-indicator {
+                        /* Styling for Firefox */
+                        background-color: white;
+                        font-size: 12px;
+                        border-radius: 50%;
+                        padding: 5px;
+                        font-family: $mulish;
+                    }
+                }
+
+                .rv-24-form_btn {
+                    background: #A58051;
+                    height: 70px;
+                    width: 200px;
+                    text-align: center;
+                    color: #FFFFFF;
+                    line-height: 70px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    transition: all 0.5s ease;
+                    font-family: $mulish;
+
+                    &:hover {
+                        background: #FFFFFF;
+                        color: #A58051;
+                        letter-spacing: 1.5px;
+                    }
+
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,125 @@
+/*! ---------------------------------
+Template Name: Organiyo - Organic Food Farming & Agriculture HTML Template
+Author: CodeBasket
+Version: 1.0
+
+-----------------------------------------------------------------------------------
+Front End is Developed By Shaikh Abu Amer on behalf of Codebasket
+
+-----------------------------------------------------------------------------------
+
+CSS INDEX
+=================== 
+01. CUSTOM PROPERTIES
+02. GLOBAL
+03. COMPONENTS
+
+04. HEADER
+05. BANNER
+06. ABOUT
+07. SPEAKERS
+08. SCHEDULE
+09. VIDEO
+10. PRICING
+11. GALERY
+12. BLOG
+13. FOOTER
+14. HISTORY
+15. SKILLS
+16. AWARD
+17. CONTACT
+18. PORTFOLIO
+19. SERVICES
+20. CATEGORIES
+21. PRODUCTS
+22. TESTIMONIAL
+23. TEAM
+24. SUB BANNER
+25. PARTNERS
+26. FEATURES
+27. DAILY DEALS
+28. FUNCTION
+29. GUIDE
+30. INFOS
+31. CAUSES
+32. SUPPORT
+33. MISSION
+34. CASE STUDY
+35. CTA
+36. STATS
+
+// inner pages
+37. BLOG GRID PAGE
+38. BLOG DETAILS PAGE
+39. SHOP SIDEBAR PAGE
+40. PRODUCT DETAILS PAGE
+41. PROJECTS INNER PAGE 
+42. SERVICES INNER PAGE
+43. CONTACT INNER PAGE
+44. ERROR 404 PAGE
+45. SERVICE DETAILS PAGE
+46. PROJECT DETAILS PAGE
+47. ABOUT PAGE
+48. TEAM MEMBER PAGE
+
+******************************************************* 
+*************************************************************** */
+
+@import "abstracts/variables";
+
+@import "main/variable";
+@import "main/breakpoints";
+@import "main/global";
+@import "main/components";
+@import "main/mixin";
+
+@import "sections/header";
+@import "sections/banner";
+@import "sections/about";
+@import "sections/speakers";
+@import "sections/schedule";
+@import "sections/video";
+@import "sections/pricing";
+@import "sections/gallery";
+@import "sections/blog";
+@import "sections/footer";
+@import "sections/history";
+@import "sections/skills";
+@import "sections/award";
+@import "sections/contact";
+@import "sections/portfolio";
+@import "sections/services";
+@import "sections/categories";
+@import "sections/products";
+@import "sections/testimonial";
+@import "sections/team";
+@import "sections/sub-banner";
+@import "sections/partners";
+@import "sections/features";
+@import "sections/daily-deals";
+@import "sections/function";
+@import "sections/guide";
+@import "sections/infos";
+@import "sections/causes";
+@import "sections/support";
+@import "sections/mission";
+@import "sections/case-study";
+@import "sections/cta";
+@import "sections/stats";
+
+// inner pages
+@import "pages/blog-page";
+@import "pages/blog-details";
+@import "pages/shop-sidebar";
+@import "pages/product-details";
+@import "pages/projects-page";
+@import "pages/services-page";
+@import "pages/contact-page";
+@import "pages/404";
+@import "pages/service-details";
+@import "pages/projects-details";
+@import "pages/about-page";
+@import "pages/team-member";
+@import "pages/cart-page";
+@import "pages/checkout-page";
+@import "pages/login-page";
