@@ -47,83 +47,33 @@ const NavSection = ({ style }: Props) => {
           </ul>
         </li>
 
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-
         <li className={dropdown.pages ? "rv-dropdown-active" : ""}>
           <a role="button" onClick={() => handleToggleDropdown("pages")}>
-            Pages
+            Services
           </a>
           <ul className="sub-menu">
             <li>
-              <Link to="/services">Services</Link>
+              <Link to="/services">EV Manufacturer</Link>
             </li>
             <li>
-              <Link to="/services/web-solution">Service Details</Link>
+              <Link to="/services/web-solution">Battery Manufacturer</Link>
             </li>
             <li>
-              <Link to="/projects">Projects</Link>
+              <Link to="/projects">EV Consumer</Link>
             </li>
             <li>
               <Link to="/projects/sustainable-planting-drive">
-                Project Details
+                Recycler
               </Link>
-            </li>
-            <li>
-              <Link to="/team">Team Members</Link>
-            </li>
-            <li>
-              <Link to="/sign-in">Sign In</Link>
-            </li>
-            <li>
-              <Link to="/sign-up">Sign Up</Link>
-            </li>
-            <li>
-              <Link to="/cart">Cart</Link>
-            </li>
-            <li>
-              <Link to="/wishlist">Wishlist</Link>
-            </li>
-            <li>
-              <Link to="/checkout">Checkout</Link>
-            </li>
-          </ul>
-        </li>
-
-        <li className={dropdown.shop ? "rv-dropdown-active" : ""}>
-          <a role="button" onClick={() => handleToggleDropdown("shop")}>
-            Shop
-          </a>
-          <ul className="sub-menu">
-            <li>
-              <Link to="/shop">Shop</Link>
-            </li>
-            <li>
-              <Link to="/shop-sidebar">Shop with Sidebar</Link>
-            </li>
-            <li>
-              <Link to="/shop/herbal-hair-oil">Product Details</Link>
-            </li>
-          </ul>
-        </li>
-
-        <li className={dropdown.blog ? "rv-dropdown-active" : ""}>
-          <a role="button" onClick={() => handleToggleDropdown("blog")}>
-            Blog
-          </a>
-          <ul className="sub-menu">
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link to="/blog/finding-creative-flow-organic">Blog Details</Link>
             </li>
           </ul>
         </li>
 
         <li>
           <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="/contact">About</Link>
         </li>
       </ul>
     </div>

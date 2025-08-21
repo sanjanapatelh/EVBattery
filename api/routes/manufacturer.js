@@ -14,6 +14,12 @@ router.post('/ev', async (req, res) => {
   invoke('RegisterEVManufacturer', args, res);
 });
 
+router.post('/evtype', async (req, res) => {
+  const { universalId, code, description, model, year, manufacturerId } = req.body;
+  const args = [universalId, code, description, model, year, manufacturerId];
+  invoke('RegisterEVType', args, res);
+});
+
 router.get('/battery/:id', async (req, res) => {
   invoke('QueryBatteryManufacturer', [req.params.id], res);
 });

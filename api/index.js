@@ -5,9 +5,8 @@ const PORT = 3000;
 
 app.use(bodyParser.json());
 
-
 app.use('/battery', require('./routes/battery'));
-app.use('/car', require('./routes/car'));
+app.use('/ev', require('./routes/ev'));
 app.use('/manufacturer', require('./routes/manufacturer'));
 app.use('/recycler', require('./routes/recycler'));
 app.use('/owner', require('./routes/owner'));

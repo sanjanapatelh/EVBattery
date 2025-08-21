@@ -4,17 +4,19 @@ import { toast } from "react-toastify";
 
 type Props = {
   login?: boolean;
+  userType?: string;
 };
 type Inputs = {
   name: string;
   email: string;
+  userType: string;
   password: string;
 };
-const AuthForm = ({ login }: Props) => {
+const AuthForm = ({ login, userType }: Props) => {
   const { register, handleSubmit, reset } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     // Perform any additional actions before or after submitting data
-    console.log(data);
+    console.log({ ...data, userType });
 
     // Show a success toast
     toast.success(`${login ? "Logged In" : "Registered"}  successfully!`);

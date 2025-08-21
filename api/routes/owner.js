@@ -5,11 +5,11 @@ const { invoke } = require('../utils/fabric');
 router.post('/', async (req, res) => {
   const { externalId, universalId, companyCode, name, address } = req.body;
   const args = [externalId, universalId, companyCode, name, address];
-  invoke('RegisterCarOwner', args, res);
+  invoke('RegisterEVOwner', args, res);
 });
 
 router.get('/:id', async (req, res) => {
-  invoke('QueryCarOwner', [req.params.id], res);
+  invoke('QueryEVOwner', [req.params.id], res);
 });
 
 module.exports = router;

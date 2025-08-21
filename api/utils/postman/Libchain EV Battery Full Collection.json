@@ -1,0 +1,419 @@
+{
+  "info": {
+    "name": "EV Battery Lifecycle API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Battery",
+      "item": [
+        {
+          "name": "Manufacture Battery",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/battery",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "battery"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"externalId\": \"BAT12345\",\n  \"universalId\": \"UNIV-BAT-0001\",\n  \"batteryTypeId\": \"BTYPE_001\",\n  \"manufacturerId\": \"BMANU_001\",\n  \"createdAt\": \"2025-07-17T12:00:00Z\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Register Battery Type",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/battery/type",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "battery",
+                "type"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"universalId\": \"UNIV-BTYPE-0001\",\n  \"code\": \"LFP100\",\n  \"description\": \"LFP 100Ah Cell\",\n  \"chemistry\": \"LiFePO4\",\n  \"capacity\": 100,\n  \"voltage\": 3.2,\n  \"manufacturerId\": \"BMANU_001\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Test Battery",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/battery/test",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "battery",
+                "test"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batteryId\": \"B+LFP100+0001\",\n  \"testerId\": \"TESTER001\",\n  \"result\": \"Pass\",\n  \"date\": \"2025-07-17\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Recycle Battery",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/battery/recycle",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "battery",
+                "recycle"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batteryId\": \"B+LFP100+0001\",\n  \"recyclerId\": \"RECY_001\",\n  \"updatedAt\": \"2025-07-17T12:00:00Z\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Query Battery",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/battery/B+LFP100+0001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "battery",
+                "B+LFP100+0001"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "EV",
+      "item": [
+        {
+          "name": "Bind Battery to EV",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ev",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ev"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batteryId\": \"B+LFP100+0001\",\n  \"externalId\": \"EV12345\",\n  \"universalId\": \"UNIV-EV-0001\",\n  \"typeId\": \"EVTYPE_001\",\n  \"manufacturerId\": \"EVMANU_001\",\n  \"createdAt\": \"2025-07-17T12:00:00Z\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Transfer EV to Owner",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ev/transfer",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ev",
+                "transfer"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"evId\": \"EV+MODELX+0001\",\n  \"newOwnerId\": \"OWNER_001\",\n  \"updatedAt\": \"2025-07-17T12:00:00Z\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Query EV",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/ev/EV+MODELX+0001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ev",
+                "EV+MODELX+0001"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Recycler",
+      "item": [
+        {
+          "name": "Register Recycler",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/recycler",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recycler"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"externalId\": \"RECY001\",\n  \"universalId\": \"UNIV-RECY-001\",\n  \"companyCode\": \"RCYCO\",\n  \"name\": \"EcoRecycle Ltd\",\n  \"location\": \"Nevada\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Query Recycler",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/recycler/RECY_001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recycler",
+                "RECY_001"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Owner",
+      "item": [
+        {
+          "name": "Register EV Owner",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/owner",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "owner"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"externalId\": \"OWN001\",\n  \"universalId\": \"UNIV-OWN-001\",\n  \"companyCode\": \"OWNCO\",\n  \"name\": \"Alice Johnson\",\n  \"address\": \"456 Elm Street, LA\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Query EV Owner",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/owner/OWNER_001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "owner",
+                "OWNER_001"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Manufacturer",
+      "item": [
+        {
+          "name": "Register Battery Manufacturer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/manufacturer/battery",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "manufacturer",
+                "battery"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"externalId\": \"EXT001\",\n  \"universalId\": \"UNIV-BATT-M001\",\n  \"companyCode\": \"BMCO\",\n  \"name\": \"BatteryCo\",\n  \"brand\": \"VoltPro\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Register EV Manufacturer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/manufacturer/ev",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "manufacturer",
+                "ev"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"externalId\": \"EXT002\",\n  \"universalId\": \"UNIV-EVM-M001\",\n  \"companyCode\": \"EVCO\",\n  \"name\": \"EVMaker\",\n  \"brand\": \"AutoEdge\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Register EV Type",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/manufacturer/evtype",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "manufacturer",
+                "evtype"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"universalId\": \"UNIV-EVT-0001\",\n  \"code\": \"MODELX\",\n  \"description\": \"Model X Sedan\",\n  \"model\": \"Model X\",\n  \"year\": \"2025\",\n  \"manufacturerId\": \"EVMANU_001\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Query Battery Manufacturer",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/manufacturer/battery/BMANU_001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "manufacturer",
+                "battery",
+                "BMANU_001"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Query EV Manufacturer",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/manufacturer/ev/EVMANU_001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "manufacturer",
+                "ev",
+                "EVMANU_001"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
