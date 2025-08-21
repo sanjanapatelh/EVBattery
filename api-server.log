@@ -1,0 +1,11 @@
+API server running at http://localhost:3000
+2025-07-17T21:08:42.913Z - [31merror[39m: [DiscoveryResultsProcessor]: parseDiscoveryResults[libchain] - Channel:mychannel received discovery error:failed constructing descriptor for chaincodes:{name:"libchain"}
+Error: DiscoveryService: libchain error: failed constructing descriptor for chaincodes:{name:"libchain"}
+    at DiscoveryResultsProcessor.parseDiscoveryResults (/Users/sanjana/Documents/Cornell/Courses/LiBchain/api/node_modules/fabric-common/lib/DiscoveryResultsProcessor.js:31:11)
+    at async DiscoveryService.send (/Users/sanjana/Documents/Cornell/Courses/LiBchain/api/node_modules/fabric-common/lib/DiscoveryService.js:341:19)
+    at async ContractImpl.newDiscoveryService (/Users/sanjana/Documents/Cornell/Courses/LiBchain/api/node_modules/fabric-network/lib/contract.js:281:9)
+    at async ContractImpl.getDiscoveryHandler (/Users/sanjana/Documents/Cornell/Courses/LiBchain/api/node_modules/fabric-network/lib/contract.js:258:25)
+    at async Transaction.submit (/Users/sanjana/Documents/Cornell/Courses/LiBchain/api/node_modules/fabric-network/lib/transaction.js:236:43)
+    at async invoke (/Users/sanjana/Documents/Cornell/Courses/LiBchain/api/utils/fabric.js:27:20)
+API server running at http://localhost:3000
+API server running at http://localhost:3000
