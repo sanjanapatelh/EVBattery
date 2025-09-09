@@ -1,0 +1,699 @@
+.blockchain-stats {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.blockchain-stats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.stats-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.stats-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.blockchain-icon {
+  margin-right: 15px;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.stats-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #a0aec0;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.last-updated {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  color: #a0aec0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.update-indicator {
+  width: 8px;
+  height: 8px;
+  background: #48bb78;
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover::before {
+  transform: scaleX(1);
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.stat-card:hover::after {
+  opacity: 1;
+}
+
+.stat-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+.stat-icon {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 20px;
+  display: block;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  color: #a0aec0;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.stat-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-change {
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.stat-change.positive {
+  background: rgba(72, 187, 120, 0.2);
+  color: #48bb78;
+  border: 1px solid rgba(72, 187, 120, 0.3);
+}
+
+.stat-change.neutral {
+  background: rgba(102, 126, 234, 0.2);
+  color: #667eea;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.blockchain-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.info-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.info-card h4 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 15px;
+  color: #667eea;
+  font-weight: 600;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.info-card p {
+  color: #a0aec0;
+  line-height: 1.6;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Loading States */
+.stat-card.loading {
+  pointer-events: none;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+.stat-card.loading .stat-icon.skeleton {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px auto;
+}
+
+.stat-card.loading .stat-number.skeleton {
+  width: 120px;
+  height: 40px;
+  margin: 0 auto 10px auto;
+}
+
+.stat-card.loading .stat-label.skeleton {
+  width: 100px;
+  height: 20px;
+  margin: 0 auto 15px auto;
+}
+
+.stat-card.loading .stat-change.skeleton {
+  width: 80px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Error State */
+.error-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.error-icon {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.error-state h3 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-bottom: 15px;
+  color: #ff6b6b;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.error-state p {
+  color: #a0aec0;
+  margin-bottom: 30px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.retry-button {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.retry-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.retry-button i {
+  font-size: 1rem;
+}
+
+/* No Data State */
+.no-data-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.no-data-icon {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.no-data-state h3 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-bottom: 15px;
+  color: #667eea;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.no-data-state p {
+  color: #a0aec0;
+  margin-bottom: 40px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.demo-stats {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.demo-stats h4 {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  margin-bottom: 30px;
+  color: #a0aec0;
+  font-weight: 500;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.demo-stats .stats-grid {
+  margin-bottom: 0;
+}
+
+/* Responsive Design - Clean Breakpoints */
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1100px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+  
+  .blockchain-info {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .blockchain-info {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .blockchain-stats {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .stats-header {
+    margin-bottom: 40px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .blockchain-info {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .stat-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blockchain-stats {
+    padding: 50px 0;
+  }
+  
+  .container {
+    padding: 0 12px;
+  }
+  
+  .stats-header {
+    margin-bottom: 30px;
+  }
+  
+  .stats-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  }
+  
+  .stats-subtitle {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    margin-bottom: 25px;
+  }
+  
+  .last-updated {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .blockchain-info {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .stat-card {
+    padding: 20px;
+  }
+  
+  .stat-icon {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+  
+  .stat-number {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .stat-label {
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
+  }
+  
+  .error-state,
+  .no-data-state {
+    padding: 40px 20px;
+  }
+  
+  .error-state h3,
+  .no-data-state h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  }
+  
+  .error-state p,
+  .no-data-state p {
+    font-size: clamp(0.8rem, 1.6vw, 1rem);
+  }
+  
+  .retry-button {
+    padding: 12px 24px;
+    font-size: clamp(0.8rem, 1.6vw, 1rem);
+  }
+  
+  .demo-stats h4 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .blockchain-stats {
+    padding: 40px 0;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .stats-header {
+    margin-bottom: 25px;
+  }
+  
+  .stats-title {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin-bottom: 15px;
+  }
+  
+  .stats-subtitle {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    margin-bottom: 20px;
+  }
+  
+  .last-updated {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+  }
+  
+  .stats-grid {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .blockchain-info {
+    gap: 15px;
+  }
+  
+  .stat-card {
+    padding: 15px;
+  }
+  
+  .stat-icon {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 15px;
+  }
+  
+  .stat-number {
+    font-size: clamp(1.3rem, 2.8vw, 1.6rem);
+    margin-bottom: 8px;
+  }
+  
+  .stat-label {
+    font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+    margin-bottom: 12px;
+  }
+  
+  .stat-change {
+    padding: 5px 10px;
+    font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+  }
+  
+  .error-state,
+  .no-data-state {
+    padding: 30px 15px;
+  }
+  
+  .error-icon,
+  .no-data-icon {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  
+  .error-state h3,
+  .no-data-state h3 {
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  }
+  
+  .retry-button {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 20px;
+  }
+  
+  .demo-stats {
+    margin-top: 30px;
+    padding-top: 30px;
+  }
+  
+  .demo-stats h4 {
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 8px;
+  }
+  
+  .stats-grid {
+    gap: 12px;
+  }
+  
+  .blockchain-info {
+    gap: 12px;
+  }
+  
+  .stat-card {
+    padding: 12px;
+  }
+  
+  .stat-icon {
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+  }
+  
+  .stat-number {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  }
+  
+  .stat-label {
+    font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+  }
+  
+  .error-state,
+  .no-data-state {
+    padding: 25px 12px;
+  }
+}

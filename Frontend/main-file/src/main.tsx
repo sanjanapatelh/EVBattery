@@ -11,6 +11,12 @@ import "./styles/fontawesome/all.min.css";
 import "./styles/fontawesome/sharp-regular.min.css";
 import "./styles/fontawesome/sharp-solid.min.css";
 import "./styles/scss/style.scss";
+import "./styles/Home.css";
+import "./component/ev-battery/EVBatteryHero.css";
+import "./component/ev-battery/SupplyChainOverview.css";
+import "./component/ev-battery/KeyFeatures.css";
+import "./component/ev-battery/IndustryStats.css";
+import "./component/ev-battery/CallToAction.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Providers>

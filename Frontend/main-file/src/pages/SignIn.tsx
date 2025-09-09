@@ -1,4 +1,5 @@
-import AuthSection from "../component/auth/AuthSection";
+import React from 'react';
+import LoginForm from "../component/auth/LoginForm";
 import BreadcrumbSection from "../component/breadcrumb/BreadcrumbSection";
 import InnerLayout from "../component/layout/InnerLayout";
 
@@ -7,7 +8,9 @@ const SignIn = () => {
     <main>
       <InnerLayout>
         <BreadcrumbSection title="Sign In" />
-        <AuthSection login />
+        <div className="signin-container">
+          <LoginForm />
+        </div>
       </InnerLayout>
     </main>
   );

@@ -43,14 +43,15 @@ type EVOwner struct {
 // ---------------------- Asset Types ----------------------
 
 type Battery struct {
-	ID             string   `json:"id"`
-	ExternalID     string   `json:"externalId"`
-	UniversalID    string   `json:"universalId"`
-	TypeID         string   `json:"typeId"`
-	ManufacturerID string   `json:"manufacturerId"`
-	Status         string   `json:"status"`
-	CreatedAt      string   `json:"createdAt"`
-	UpdatedAt      string   `json:"updatedAt"`
+	ID             string `json:"id"`
+	ExternalID     string `json:"externalId"`
+	UniversalID    string `json:"universalId"`
+	TypeID         string `json:"typeId"`
+	ManufacturerID string `json:"manufacturerId"`
+	Status         string `json:"status"`
+	CreatedAt      string `json:"createdAt"`
+	UpdatedAt      string `json:"updatedAt"`
+	DocType        string `json:"docType"` // For querying purposes
 }
 
 type EV struct {
@@ -61,8 +62,10 @@ type EV struct {
 	ManufacturerID string `json:"manufacturerId"`
 	BatteryID      string `json:"batteryId"`
 	OwnerID        string `json:"ownerId"`
+	Status         string `json:"status"` // Track EV status: "Created", "Sold", "In Use", etc.
 	CreatedAt      string `json:"createdAt"`
 	UpdatedAt      string `json:"updatedAt"`
+	DocType        string `json:"docType"` // For querying purposes
 }
 
 type TestResult struct {
@@ -70,6 +73,7 @@ type TestResult struct {
 	TesterID  string `json:"testerId"`
 	Result    string `json:"result"`
 	Date      string `json:"date"`
+	DocType   string `json:"docType"` // For querying purposes
 }
 
 // ---------------------- Type Definitions ----------------------
@@ -83,6 +87,7 @@ type BatteryType struct {
 	Capacity       float64 `json:"capacity"`
 	Voltage        float64 `json:"voltage"`
 	ManufacturerID string  `json:"manufacturerId"`
+	DocType        string  `json:"docType"` // For querying purposes
 }
 
 type EVType struct {
@@ -93,6 +98,7 @@ type EVType struct {
 	Model          string `json:"model"`
 	Year           string `json:"year"`
 	ManufacturerID string `json:"manufacturerId"`
+	DocType        string `json:"docType"` // For querying purposes
 }
 
 type BindingType struct {
@@ -102,4 +108,5 @@ type BindingType struct {
 	Description        string `json:"description"`
 	CompatibilityNotes string `json:"compatibilityNotes"`
 	ManufacturerID     string `json:"manufacturerId"`
+	DocType            string `json:"docType"` // For querying purposes
 }

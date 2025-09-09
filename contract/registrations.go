@@ -17,7 +17,7 @@ func (s *SmartContract) RegisterBatteryManufacturer(ctx contractapi.TransactionC
 		CompanyCode: companyCode, Name: name, Brand: brand, Type: "Battery",
 	}
 	bytes, _ := json.Marshal(entity)
-	return id, ctx.GetStub().PutState("BMANU_"+id, bytes)
+	return id, ctx.GetStub().PutState(id, bytes) // Remove "BMANU_" prefix since id already contains it
 }
 
 func (s *SmartContract) RegisterEVManufacturer(ctx contractapi.TransactionContextInterface, externalID, universalID, companyCode, name, brand string) (string, error) {

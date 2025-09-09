@@ -9,50 +9,90 @@ type Props = {
 const AuthSection = ({ login }: Props) => {
   const [userType, setUserType] = useState("");
 
+  const userTypes = [
+    {
+      id: 'ev-manufacturer',
+      title: 'EV Manufacturer',
+      icon: '🚗',
+      description: 'Manufacture electric vehicles',
+      color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    },
+    {
+      id: 'battery-manufacturer',
+      title: 'Battery Manufacturer',
+      icon: '🔋',
+      description: 'Produce EV batteries',
+      color: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+    },
+    {
+      id: 'ev-consumer',
+      title: 'EV Consumer',
+      icon: '👤',
+      description: 'Own electric vehicles',
+      color: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+    },
+    {
+      id: 'recycler',
+      title: 'Recycler',
+      icon: '♻️',
+      description: 'Recycle EV batteries',
+      color: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
+    }
+  ];
+
+  const handleCardClick = (typeId: string) => {
+    setUserType(typeId);
+  };
+
   return (
     <section className="rv-account-form-section">
       <DivAnimateYAxis className="container">
         <div className="row justify-content-center">
           <div className="col-12 auth-container">
             <h3 className="single-form-title">
-              {login ? "Log In" : "Register"}
+              {login ? "Log In" : "User Types"}
             </h3>
             
             {!login && (
-              <div className="user-type-selection mb-3">
-                <select
-                  value={userType}
-                  onChange={(e) => setUserType(e.target.value)}
-                  className="form-select user-type-dropdown"
-                  required
-                >
-                  <option value="">Select User Type</option>
-                  <option value="ev-manufacturer">EV Manufacturer</option>
-                  <option value="battery-manufacturer">Battery Manufacturer</option>
-                  <option value="ev-consumer">EV Consumer</option>
-                  <option value="recycler">Recycler</option>
-                </select>
+              <div className="user-type-selection">
+                <h4 className="selection-title">Available User Types</h4>
+                <p className="selection-subtitle">The system supports these different user roles</p>
+                
+                <div className="user-type-row">
+                  {userTypes.map((type) => (
+                    <div
+                      key={type.id}
+                      className={`user-type-card ${userType === type.id ? 'selected' : ''}`}
+                      onClick={() => handleCardClick(type.id)}
+                    >
+                      <div className="card-icon" style={{ background: type.color }}>
+                        <span>{type.icon}</span>
+                      </div>
+                      <div className="card-content">
+                        <h5 className="card-title">{type.title}</h5>
+                        <p className="card-description">{type.description}</p>
+                      </div>
+                      <div className="card-arrow">→</div>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="registration-info">
+                  <p className="info-text">
+                    To register for any of these user types, please contact your system administrator 
+                    or use the sign-up page with the appropriate credentials.
+                  </p>
+                  <div className="info-actions">
+                    <a href="/sign-in" className="btn-primary">Sign In</a>
+                    <a href="/" className="btn-secondary">Back to Home</a>
+                  </div>
+                </div>
               </div>
             )}
             
-            <AuthForm login={login} userType={userType} />
-            <div className="other-option">
-              <p>Or continue with</p>
-              <div className="social-box d-flex justify-content-center gap-20">
-                <a href="#">
-                  <i className="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="#">
-                  <i className="fa-brands fa-twitter"></i>
-                </a>
-                <a href="#">
-                  <i className="fa-brands fa-google"></i>
-                </a>
-                <a href="#">
-                  <i className="fa-brands fa-instagram"></i>
-                </a>
-              </div>
-            </div>
+            {login && (
+              <AuthForm login={login} userType={userType} />
+            )}
           </div>
         </div>
       </DivAnimateYAxis>

@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import ProtectedRoute from "./component/auth/ProtectedRoute";
 import Home1 from "./pages/Home1";
 import Home2 from "./pages/Home2";
 import Home3 from "./pages/Home3";
@@ -19,35 +21,51 @@ import ShopSidebarPage from "./pages/ShopSidebarPage";
 import BlogPage from "./pages/BlogPage";
 import BlogDetailsPage from "./pages/BlogDetailsPage";
 import ContactPage from "./pages/ContactPage";
+import ApiTest from "./pages/ApiTest";
 import ErrorPage from "./pages/ErrorPage";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home1 />} />
-        <Route path="/home-2" element={<Home2 />} />
-        <Route path="/home-3" element={<Home3 />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/:serviceSlug" element={<ServiceDetailsPage />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:projectSlug" element={<ProjectDetailsPage />} />
-        <Route path="/team" element={<TeamMembers />} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/wishlist" element={<WishlistPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/shop" element={<ShopPage />} />
-        <Route path="/shop-sidebar" element={<ShopSidebarPage />} />
-        <Route path="/shop/:shopSlug" element={<ShopDetailsPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog/:blogSlug" element={<BlogDetailsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home3 />} />
+          <Route path="/home-1" element={<Home1 />} />
+          <Route path="/home-2" element={<Home2 />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:serviceSlug" element={<ServiceDetailsPage />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:projectSlug" element={<ProjectDetailsPage />} />
+          <Route path="/team" element={<TeamMembers />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/wishlist" element={<WishlistPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/shop-sidebar" element={<ShopSidebarPage />} />
+          <Route path="/shop/:shopSlug" element={<ShopDetailsPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:blogSlug" element={<BlogDetailsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/api-test" element={<ApiTest />} />
+          
+          {/* Protected Dashboard Routes */}
+          <Route 
+            path="/dashboard" 
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            } 
+          />
+          
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 
